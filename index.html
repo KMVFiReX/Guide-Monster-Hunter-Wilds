@@ -1,0 +1,2129 @@
+c <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Guide Monster Hunter Wilds</title>
+    <link rel="icon" href="img/logo1.webp" type="imgage/webp">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            height: 100vh;
+            background-image: url('fond.webp'); 
+            background-size: cover; 
+            background-position: bottom; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+            
+        }
+
+
+
+
+
+
+
+        
+ 
+        .volto-box, .gs-box ,.katana-box,.arc-box,.cor-box,.double-box,.gunlance-box,.ig-box,.lance-box,.leger-box,.lourd-box,.marteau-box,.morpho-box,.sns-box {
+            display: inline-block; 
+            align-items: center; 
+            flex-direction: column;
+            padding: 0.5rem 0.5rem;
+            width: auto;
+            margin: 0 5px; 
+            
+        }
+
+        #volto, #gs, #katana, #arc, #cor, #double, #gunlance, #ig, #lance, #leger, #lourd,#marteau, #morpho, #sns {
+            width: 100px;
+            height: 100px;
+        }
+
+        .monstre {
+            width: 100px;
+            height: 100px;
+        }
+        .monstre-image {
+            width: 700px ;
+            height: auto;
+         
+        }
+
+
+        .monster-box {
+            display: inline-block;
+            align-items: center;
+            flex-direction: column;
+            padding: 0.5rem 0.5rem;
+            width: auto;
+            margin: 0 5px;
+        }
+
+
+        .overlay {
+            position: relative;
+            background: rgba(255,255,255, 0.5);
+            padding: 10px;
+            padding-bottom: 40px;
+            border-radius: 10px;
+            width: 250px;
+            height: auto;
+            max-width: 40vw;
+            max-height: 90vw;
+            overflow: auto;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: 0.3s ease-out;
+        }
+
+        .overlay-monstre {
+            position: relative;
+            background: rgba(241, 232, 195, 0.7);
+            padding: 10px;
+            padding-bottom: 40px;
+            border-radius: 10px;
+            width: 250px;
+            height: auto;
+            max-width: 40vw;
+            max-height: 90vw;
+            overflow: auto;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: 0.3s ease-out;
+            
+        }
+
+        #overlay15.expanded, #overlay16.expanded, #overlay17.expanded, #overlay18.expanded, #overlay19.expanded, #overlay20.expanded, #overlay21.expanded, #overlay22.expanded, #overlay23.expanded, #overlay24.expanded, #overlay25.expanded, #overlay26.expanded, #overlay27.expanded, #overlay28.expanded, #overlay29.expanded, #overlay30.expanded, #overlay31.expanded, #overlay32.expanded, #overlay33.expanded, #overlay34.expanded, #overlay35.expanded, #overlay36.expanded, #overlay37.expanded, #overlay38.expanded, #overlay39.expanded, #overlay40.expanded, #overlay41.expanded{
+            width: auto;
+            height: 1000px;
+            padding: 20px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #overlay1.expanded, #overlay2.expanded, #overlay3.expanded, #overlay4.expanded, #overlay5.expanded, 
+            #overlay6.expanded, #overlay7.expanded, #overlay8.expanded, #overlay9.expanded, #overlay10.expanded, 
+            #overlay11.expanded, #overlay12.expanded, #overlay13.expanded, #overlay14.expanded{
+                width: auto; 
+                height: 890px; 
+                padding: 20px;
+            }
+
+
+        .texte{
+            display: none;
+            text-align: left;
+            max-width: 100%;
+            overflow-wrap: break-word;
+            max-height: 70vw; 
+            overflow: auto;
+            font-family:cursive;
+            color:black
+        }
+
+
+
+
+
+        .button{
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            color: white;
+            background-color: #948e8d;
+            border: none;
+            padding: 3px 6px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            width: 50px;
+        }
+       
+
+
+
+        #nom {
+            position: absolute;
+            width: 45%;
+            height: auto;
+            top: 26%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family:cursive;
+        }
+
+        #menu {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px;
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 90vw;
+            width: 90vw;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            
+        }
+
+        .onglet {
+            margin: 10px 10px;
+            flex-grow: 1;
+            color: black;
+            background-color: orange;
+            border-color:darkorange;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+			border-radius: 10px;
+            font-family:cursive;
+            font-size:20px ;
+        }
+
+            .onglet:hover {
+                background: darkorange;
+            }
+
+
+
+        #contenu-container {
+            position: absolute;
+            width: 95vw;
+            max-width: 95vw;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 10px;
+            top: 95%;
+            display: none;
+            left: 50%;
+            transform: translateX(-50%);
+            height: auto;
+
+        }
+
+        #contenu {
+            text-align: left;
+        }
+
+        .question {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.7);
+            margin: 10px;
+            width: auto;
+            color: white;
+            font-size: 18pt;
+            font-family: verdana;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 10px;
+            font-family:cursive;
+            
+        }
+		#ton_nom{
+		background-color:orange;
+		border-color:darkorange;
+		border-radius: 7px;
+        font-family:cursive;
+		
+		}
+		
+		#validation{
+		background-color:orange;
+		border-color:darkorange;
+		border-radius: 7px;
+        font-family:cursive;
+		}
+		#validation:hover{
+		background: darkorange;
+	
+		}
+		
+		#ton_nom:hover{
+
+		background: darkorange;
+		
+		}
+		
+		.titre{
+		text-align: center;
+		font-size: 30px;
+		text-decoration: underline;
+        font-family:cursive;
+
+		}
+
+
+        #titre_blanc{
+            color:white;
+
+
+        }
+
+        .sous-titre {
+            text-align: center;
+            font-family: cursive;
+        }
+.paragraphe{
+
+font-family:cursive;
+color:black ;
+}
+
+        .mini-image {
+            transition: width 0.3s ease, height 0.3s ease;
+            max-width: 100%;
+            width: 700px;
+            height: auto;
+        }
+
+        .image-foret, .image-plaine, .image-vallon, .image-falaise, .image-bassin, .image-ruine{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #ddd;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family:cursive;
+        }
+
+            .btn:hover {
+                background-color: #bbb;
+            }
+
+        .theme-controls {
+            margin-bottom: 20px;
+        }
+
+        .notif {
+            width: 120px;
+            height: auto;
+            padding: 10px 20px;
+            font-size: 25px;
+            background-color: bisque;
+            border: none;
+            border-radius: 6px;
+            
+        }
+
+
+        .centre ,.container-bestiaire ,.container-box-arme {
+            text-align: center;
+            padding:30px ;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <img id='nom' src="nom_monster.webp">
+
+        <div class="question">
+
+            <div>
+                Quel est ton nom chasseur ? <input type=text id='ton_nom' size="20">
+
+            </div>
+
+            <div>
+                <input type="button" id="validation" value="valider"
+                       onclick="
+               cible = document.getElementById('modifiable');
+               nom = document.getElementById('ton_nom').value;
+    cible.innerHTML = 'Bienvenue ' + nom+ ', chasseur ! Vous venez de franchir les portes du guide ultime de Monster Hunter Wilds. Que votre aventure commence ici !';
+           ">
+
+            </div>
+            <div id='modifiable'>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="menu">
+            <button class="onglet" onclick="afficherContenu('arme')">Arme</button>
+            <button class="onglet" onclick="afficherContenu('histoire')">Histoire</button>
+            <button class="onglet" onclick="afficherContenu('lieux')">Lieux</button>
+            <button class="onglet" onclick="afficherContenu('monstre')">Monstre</button>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <div id="contenu-container">
+        <div id="contenu"></div>
+    </div>
+
+
+
+
+
+
+
+    <script>
+
+
+        function imagesolo(imageId, nb) {
+            img = document.getElementById(imageId);
+            if (img) {
+                img.style.width = nb + "px";
+            }
+        }
+
+        function imagemulti(theme, nb) {
+            images = document.querySelectorAll('.mini-image.' + theme);
+            for (let img of images) {
+                img.style.width = nb + "px";
+            }
+        }
+
+
+
+        function suggestion() {
+            style = prompt("Quel est votre style ? (Ex: tank, dps, soutien)");
+            if (style) {
+                alert("Suggestion pour " + style + " :\n- Arme : Volto-hache\nPourquoi ? La Volto-hache, véritable caméléon des armes de Monster Hunter Wilds, offre une palette de styles de jeu aussi riche que variée. Que vous soyez un bourreau élémentaire, un tank inébranlable ou un danseur polyvalent, elle saura se plier à vos préférences. Le bourreau élémentaire, adepte des dégâts massifs, exploite les faiblesses des monstres avec des attaques chargées et des super-charges élémentaires. Le tank immobile, quant à lui, privilégie la défense et les contre-attaques dévastatrices, transformant chaque assaut ennemi en une opportunité de riposte. Enfin, le danseur polyvalent, équilibriste de l'attaque et de la défense, jongle entre les modes épée et hache, adaptant son style aux caprices du combat. Quel que soit votre choix, la Volto-hache vous invite à une danse mortelle, où la maîtrise des combos et la connaissance des monstres sont les clés de la victoire.");
+            } else {
+                alert("Aucune suggestion sans choix 😅");
+            }
+        }
+        
+
+
+
+
+
+        function chasse() {
+            if (confirm("Un Rathalos sauvage est apparu ! Voulez-vous le chasser ?")) {
+                alert("Mission acceptée ! Préparez vos potions !");
+            } else {
+                alert("Vous décidez de vous entraîner un peu avant d’y retourner. Bonne idée, chasseur ! 💪");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function OnOff(id) {
+            overlay = document.getElementById("overlay" + id); 
+            texte = document.getElementById("texte" + id); 
+            bouton = document.getElementById("button" + id); 
+
+            if (overlay.classList.contains("expanded")) {
+                overlay.classList.remove("expanded");
+                texte.style.display = "none";
+                bouton.value = "►";
+            } else {
+                overlay.classList.add("expanded");
+                texte.style.display = "block";
+                bouton.value = "▼";
+            }
+        }
+
+        function affiche(id) {
+            const block = document.getElementById("hiddenBlock"+id);
+            block.style.display = block.style.display === "none" ? "block" : "none";
+        }
+
+
+
+
+
+
+        function afficherContenu(typeContenu, element) {
+            contenuDiv = document.getElementById('contenu');
+            container = document.getElementById('contenu-container');
+            container.style.display = "block"; 
+            
+
+            if (typeContenu === 'histoire') {
+                container.style.backgroundImage = "url('histoire.png')";
+                container.style.backgroundSize = "cover";
+                container.style.backgroundRepeat = "no-repeat";
+                contenuDiv.innerHTML = `
+
+               
+    <input type='range' id='taille' value='12' min='6' step='2' max='40'
+    onchange="document.getElementById('doc').style.fontSize=this.value+'pt';">
+ <div class='paragraphe'>Choisis la taille des caractères</div>
+
+
+
+<div id='doc'>
+<div class='titre'><h1>Histoire</h1></div>
+
+
+
+	<div class='sous-titre'><h2><strong>L'exploration des Terres interdites : un nouveau chapitre pour la Guilde</strong></h2></div>
+                        <div class='paragraphe'><p>
+                        La Guilde des chasseurs, toujours en quête de nouvelles contrées à explorer, pose son regard sur les Terres interdites. Cette région mystérieuse, longtemps
+                        considérée comme inhospitalière, recèle des écosystèmes complexes et des créatures inédites. Les chasseurs, dont le joueur, sont envoyés en mission pour cartographier
+                        ces terres, étudier la faune locale et évaluer les dangers potentiels. Cette expédition marque le début d'une aventure où la survie dépendra de l'adaptation aux environnements
+                        changeants et de la maîtrise des nouvelles espèces de monstres.
+                        </p>
+                        </div>
+
+                    <div class='sous-titre'><h2><strong>Nata et les Veilleurs : un peuple en harmonie avec la nature</strong></h2></div>
+                        <div class='paragraphe'><p>
+                        Au cœur de cette région sauvage, les chasseurs découvrent l'existence des Veilleurs, un peuple indigène vivant en symbiose avec la nature. Leur mode de vie,
+                        axé sur le respect de l'équilibre écologique, contraste avec l'approche plus interventionniste de la Guilde. Nata, un jeune membre de ce peuple, devient un personnage
+                        clé de l'histoire. Il sert de guide aux chasseurs, partageant ses connaissances sur les Terres interdites et les créatures qui y habitent. Son récit de l'attaque de son
+                        village par le Spectre Blanc ajoute une dimension personnelle à l'enquête, incitant les chasseurs à protéger les Veilleurs et à comprendre les motivations de ce monstre
+                        mystérieux.
+                        </p>
+                        </div>
+
+<div class='sous-titre'><h2><strong>Le Spectre Blanc : une menace pour l'équilibre des Terres interdites</strong></h2></div>
+                        <div class='paragraphe'><p>
+                        Le Spectre Blanc, un monstre redoutable et énigmatique, est au centre des préoccupations de la Guilde et des Veilleurs. Son apparition soudaine et ses attaques
+                        dévastatrices perturbent l'équilibre fragile des Terres interdites. Les chasseurs doivent enquêter sur son comportement, ses origines et ses intentions. Les indices
+                        récoltés au fil de l'aventure révèlent une menace plus grande que prévu, impliquant peut-être des forces anciennes et des secrets enfouis. La traque du Spectre Blanc
+                        devient alors une course contre la montre pour protéger les Terres interdites et ses habitants.
+                        </p>
+                        </div>
+
+
+<div class='sous-titre'><h2><strong>Une histoire de survie et de découverte</strong></h2></div>
+                        <div class='paragraphe'><p>
+                        Monster Hunter Wilds ne se contente pas de proposer des combats de monstres épiques. Il tisse une histoire complexe où les thèmes de la survie, de l'exploration et de
+                        la coexistence avec la nature sont omniprésents. Les joueurs devront faire preuve de courage, de stratégie et de compassion pour surmonter les défis qui se présentent à eux.
+                        L'aventure promet des rebondissements, des révélations et des moments de bravoure, le tout dans un monde riche en détails et en émotions.
+                        </p>
+                        </div>
+                   
+						
+						
+						
+
+<div class='paragraphe' onclick="this.innerHTML='Dans de prochaine mise à jour à suivre ...';this.style.fontSize='20px';this.style.color='darkred';"> BONUS* </div>
+
+</doc>
+                        `;
+            }
+
+
+
+
+
+
+
+
+
+            else if (typeContenu === 'arme') {
+                container.style.backgroundImage = "url('forge.png')";
+                container.style.backgroundSize = "cover";
+                container.style.backgroundRepeat = "no-repeat";               
+                contenuDiv.innerHTML = `
+
+
+                                    <div id='titre_blanc' class='titre'><h1>Arme</h1></div>
+
+<button class='paragraphe' onclick="suggestion()">Obtenir une suggestion d'équipement</button>
+
+
+<div class="container-box-arme">
+        <div class="volto-box">
+
+            <div class='overlay' id="overlay10">
+                <img id="volto" src="volto.webp"><div class='paragraphe'><h3>Volto-hache</h3></div>
+                <div class='texte' id="texte10">
+                    La Volto-Hache est une arme récente apparue dans MH4U. Cette arme est similaire à la Morpho-Hache, avec sa capacité de changer entre deux configurations : le Mode Épée et le Mode Hache.
+                    <br><br>
+                    Ces deux modes sont capables d'effectuer de puissantes attaques chargées après que le chasseur ait délivré assez de coups. Après cela, une fiole logée dans la garde de l'arme brillera en jaune, permettant après avoir engrangé l'énergie, de réaliser des attaques chargées.
+                    <br><br>
+                    La fiole peut être chargée à un niveau supérieur, elle brille alors en rouge, résultant en des attaques chargées au maximum. Mais si l'arme n'assimile pas l'énergie, elle surchauffera, ce qui la fera systématiquement rebondir et l’empêchera de porter des attaques chargées.
+                    <br><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QrSKxNHCliA?si=bu3dWTWvUpcWStXD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+                </div>
+                <br>
+
+                <input type="button" class='button' id="button10" value="►" onclick="OnOff(10);">
+
+            </div>
+        </div>
+
+        <div class="gs-box">
+
+            <div class='overlay' id="overlay1">
+                <img id="gs" src="gs.webp"><div class='paragraphe'><h3>Grande épée</h3></div>
+                <div class='texte' id="texte1">
+                    La Grande épée (ou GS dans le jargon, pour Great Sword) est une arme capable d'infliger de lourds dégâts mais pèche par sa très faible mobilité. Malgré sa grande puissance, c'est une arme qui requiert de l'entraînement pour être maîtrisée, notamment contre les monstres les plus véloces.
+                    <br><br>
+                    Elle peut également bloquer les attaques (sa protection étant meilleure que celle de l'épée et bouclier) avec la possibilité d'être dégainée instantanément pour se protéger. Attention tout de même, chaque fois que vous vous protégez d'une attaque l'épée perd de son tranchant !
+                    <br><br>
+                    De manière générale le tranchant des grandes épées est inférieur à celui des autres armes, donc veillez à toujours avoir des aiguisoirs dans votre bourse.
+                    <br><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/t2h3Uxj7nNg?si=Kk6fMRtpXsAyaqfW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+                </div>
+                <br>
+
+                <input type="button" class='button' id="button1" value="►" onclick="OnOff(1);">
+
+            </div>
+        </div>
+
+<div class="katana-box">
+
+        <div class='overlay' id="overlay2">
+            <img id="katana" src="katana.webp"><div class='paragraphe'><h3>Épée longue</h3></div>
+            <div class='texte' id="texte2">
+                À l'origine, les épées longues ressemblaient à des katanas mais faisaient partie des grandes épées. Depuis, l'épée longue est devenue très populaire auprès des nouveaux joueurs de par sa rapidité d'attaque, sa facilité de prise en main et un potentiel de dommages relativement élevé grâce à ses combos Fouguelame.
+                <br><br>
+                Son attaque élevée, doublée d'une grande mobilité, implique quelques inconvénients. Depuis la séparation de la famille des grandes épées, les épées longues n'ont plus aucune garde et le seul moyen de se protéger des attaques est de les esquiver. Ainsi, le chasseur utilisant cette arme doit être suffisamment agressif pour savoir où et quand attaquer, tout en étant assez prudent pour arrêter ses attaques et esquiver.
+                <br><br>
+                L'épée longue a un court délai d'attente après la plupart de ses attaques mais on peut combler ce vide par une attaque Fouguelame, qui peut être effectuée après n'importe quelle autre attaque de façons à améliorer la fluidité du combat. Le chasseur doit aussi prendre des risques pour augmenter sa jauge de fougue, qui, une fois pleine, augmente les dégâts infligés et permet de faire des combos Fouguelame.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/RmP9QFeGbl4?si=Ya21XUtmJ2ox5dOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+            </div>
+            <br>
+
+            <input type="button" class='button' id="button2" value="►" onclick="OnOff(2);">
+
+        </div>
+</div>
+
+<div class="sns-box">
+
+        <div class='overlay' id="overlay3">
+            <img id="sns" src="sns.webp"><div class='paragraphe'><h3>Épée et bouclier</h3></div>
+            <div class='texte' id="texte3">
+                L'Épée et Bouclier est une arme idéale pour les débutants, car elle permet d'apprendre les bases du combat sans être trop punitif. Ses attaques rapides et fluides permettent d'enchaîner les combos facilement, et le bouclier offre une protection fiable contre les attaques ennemies. De plus, l'Épée et Bouclier permet d'utiliser des objets même lorsque l'arme est dégainée, ce qui est très pratique pour les situations d'urgence.
+                <br><br>
+                La mobilité est l'un des points forts de l'Épée et Bouclier. Les chasseurs peuvent se déplacer rapidement tout en attaquant, ce qui leur permet de rester agiles et de s'adapter aux mouvements des monstres. Cette mobilité, combinée à la capacité de bloquer les attaques, fait de l'Épée et Bouclier une arme très polyvalente, capable de s'adapter à différents types de monstres et de situations de combat.
+                <br><br>
+                Bien que l'Épée et Bouclier n'inflige pas les dégâts bruts les plus élevés, elle excelle dans l'application de dégâts élémentaires et d'afflictions. Ses attaques rapides permettent de frapper fréquemment, ce qui maximise l'effet des dégâts élémentaires et des statuts comme le poison ou la paralysie. De plus, l'Épée et Bouclier dispose de combos variés, permettant aux chasseurs d'adapter leur style de jeu en fonction de leurs préférences et des faiblesses des monstres.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/HaAhlupvKzU?si=lh2f4JClEYkbE7Kx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            <br>
+
+            <input type="button" class='button' id="button3" value="►" onclick="OnOff(3);">
+
+        </div>
+</div>
+
+
+<div class="double-box">
+
+        <div class='overlay' id="overlay4">
+            <img id="double" src="double.webp"><div class='paragraphe'><h3>Doubles lames</h3></div>
+            <div class='texte' id="texte4">
+                Les Doubles Lames (ou DS dans le jargon, pour Double Sword) sont des armes rapides introduites dans la version occidentale de Monster Hunter. Elles se distinguent par leur vitesse d'attaque exceptionnelle, compensant une puissance brute relativement faible. Capables d'infliger des dégâts élémentaires variés et de statuts, elles offrent une grande flexibilité en combat. Leur "mode démon" (ou "Danse du diable") augmente considérablement leur potentiel offensif, offrant une alternative dynamique et agressive.
+                <br><br>
+                Les Doubles Lames excellent dans l'enchaînement d'attaques continues, permettant d'infliger des dégâts soutenus sur la durée. Leur style de jeu diffère de celui de l'Épée et Bouclier, privilégiant des combos statiques prolongés plutôt que des attaques courtes et mobiles. Cette approche permet de maximiser les dégâts élémentaires et de statut, rendant les Doubles Lames particulièrement efficaces contre les monstres sensibles à ces effets.
+                <br><br>
+                En raison de leur fréquence d'attaque élevée, les Doubles Lames sont particulièrement redoutables avec les armes à statut. Elles permettent d'appliquer rapidement des effets comme le poison, la paralysie ou l'explosion, offrant un contrôle accru sur le combat. Leur capacité à combiner deux éléments simultanément élargit encore leur éventail de possibilités, les rendant adaptées à une variété de situations de chasse.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FvX367QFb9o?si=FHvw91EoxP8_msqx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+            </div>
+            <br>
+
+            <input type="button" class='button' id="button4" value="►" onclick="OnOff(4);">
+
+        </div>
+</div>
+
+
+
+<div class="marteau-box">
+
+        <div class='overlay' id="overlay5">
+            <img id="marteau" src="marteau.webp"><div class='paragraphe'><h3>Marteau</h3></div>
+            <div class='texte' id="texte5">
+                Les Marteaux, présents depuis le premier Monster Hunter, sont des armes axées sur la puissance brute. Ils permettent d'infliger d'énormes dégâts et de contrôler le combat. Le chasseur peut se déplacer à la même vitesse avec l'arme dégainée qu'avec elle rengainée, ce qui offre une grande mobilité offensive. Les attaques de base sont puissantes et à courte portée, et les attaques chargées rotatives permettent de se déplacer tout en infligeant des dégâts.
+                <br><br>
+                Leur puissance brute exceptionnelle a un prix : les Marteaux n'ont aucune capacité de garde ou d'esquive, à part la roulade standard. La maîtrise de cette arme demande un excellent sens du timing pour les attaques chargées et une bonne anticipation des mouvements du monstre. Malgré cela, les Marteaux offrent une variété de statuts et d'éléments, ce qui les rend efficaces pour infliger des dégâts élémentaires. Ils sont également très utiles pour briser les cornes et autres parties dures des monstres, mais ne permettent pas de couper les queues.
+                <br><br>
+                Les Marteaux infligent des dégâts contondants, idéaux pour étourdir les monstres. Les attaques chargées, en particulier, peuvent infliger d'énormes dégâts et étourdir les monstres, les rendant vulnérables. Les effets d'étourdissement sont signalés par des courbes jaunes autour de l'impact et un son caractéristique. Lorsqu'un monstre est étourdi, il tombe au sol, des étoiles tournant autour de sa tête, offrant une opportunité pour des combos dévastateurs.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1SVhAsgES1k?si=CMHSxY0PQ7WSeEqV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            <br>
+
+            <input type="button" class='button' id="button5" value="►" onclick="OnOff(5);">
+
+        </div>
+</div>
+
+
+
+<div class="cor-box">
+
+        <div class='overlay' id="overlay6">
+            <img id="cor" src="cor.webp"><div class='paragraphe'><h3>Corne de chasse</h3></div>
+            <div class='texte' id="texte6">
+                À l'origine, les Cornes de Chasse étaient considérablement plus faibles que les Marteaux en termes de dégâts bruts. Cette disparité était due à la formule de calcul des dégâts, même pour les attaques qu'ils partageaient, comme le coup complet (A+X). La caractéristique distinctive de la Corne de Chasse résidait dans ses partitions musicales, activées par le bouton "R", qui offraient des bonus de soutien uniques à l'équipe.
+                <br><br>
+                Avec l'arrivée de Monster Hunter Portable 3rd, la formule de dégâts a été rééquilibrée, permettant à la Corne de Chasse de rivaliser avec le Marteau en termes de dégâts bruts. Bien que le Marteau conserve son avantage en dégâts instantanés et en dégâts d'étourdissement, la Corne de Chasse excelle désormais dans les dégâts soutenus sur la durée. De plus, Portable 3rd a introduit le coup de manche (A, A), une attaque permettant de couper les queues de monstres, ajoutant une nouvelle dimension à son utilité.
+                <br><br>
+                Chaque Corne de Chasse possède un ensemble unique de trois notes colorées, qui peuvent être combinées pour créer diverses partitions musicales. Ces partitions confèrent des bonus variés à l'équipe, imitant les effets de certains objets comme les Potions Démon et les Sérums Psy. Cette capacité de soutien, combinée à ses dégâts améliorés, fait de la Corne de Chasse une arme polyvalente et précieuse pour les chasseurs en groupe.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/2gXz5-608Ns?si=6Wts1ZOpd_zLeTsH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            <br>
+
+            <input type="button" class='button' id="button6" value="►" onclick="OnOff(6);">
+
+        </div>
+</div>
+
+
+
+<div class="lance-box">
+
+        <div class='overlay' id="overlay7">
+            <img id="lance" src="lance.webp"><div class='paragraphe'><h3>Lance</h3></div>
+            <div class='texte' id="texte7">
+                Les Lances sont des armes de mêlée à longue portée, caractérisées par leur bouclier imposant offrant une défense robuste. Bien qu'elles puissent sembler lentes et peu mobiles, elles compensent par des dégâts impressionnants et la capacité unique d'attaquer tout en se protégeant. Leurs mouvements incluent des attaques hautes, moyennes et des charges, permettant une grande variété de stratégies offensives et défensives.
+                <br><br>
+                Les Lances se distinguent par leur capacité à attaquer et à bloquer simultanément, une caractéristique rare parmi les armes de Monster Hunter. Cette polyvalence permet aux chasseurs de maintenir une pression constante sur les monstres tout en se protégeant des attaques dangereuses. Le bouclier offre une protection fiable contre la plupart des attaques, ce qui en fait une arme idéale pour les combats prolongés et les monstres puissants.
+                <br><br>
+                Les Lances possèdent une sous-classe unique, les Lancecanons, qui combinent les capacités de la lance avec des attaques explosives dévastatrices. Les Lancecanons offrent une nouvelle dimension au style de jeu de la lance, permettant aux chasseurs d'infliger des dégâts massifs à distance et de contrôler le champ de bataille avec des explosions. Cette sous-classe ajoute une complexité supplémentaire à la Lance, offrant aux chasseurs une grande variété de stratégies et de possibilités de personnalisation.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/9cd2dIa1DKk?si=qveyvphP9lb9OJR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            <br>
+
+            <input type="button" class='button' id="button7" value="►" onclick="OnOff(7);">
+
+        </div>
+</div>
+
+<div class="gunlance-box">
+
+        <div class='overlay' id="overlay8">
+            <img id="gunlance" src="gunlance.webp"><div class='paragraphe'><h3>Lancecanon</h3></div>
+            <div class='texte' id="texte8">
+                Le Lanceflingue est une arme de mêlée à longue portée qui se distingue par son mécanisme de tir de chargeurs de balles. Contrairement aux Fusarbalètes, il ne peut pas tirer à distance ; les balles n'ont qu'une très courte portée. Son utilisation est similaire à celle de la Lance, mais avec une orientation plus offensive. De plus, chaque tir réduit le tranchant de l'arme, et il est impossible de tirer avec un tranchant rouge.
+                <br><br>
+                Le Lanceflingue utilise des munitions, comme les armes à distance. Il peut charger ses tirs, dont la puissance est indiquée par une lumière intense en sortie du canon. Il peut également déclencher une puissante explosion appelée "Feu de Wyvern". Ces mécaniques de tir ajoutent une dimension stratégique à l'arme, permettant aux chasseurs d'infliger des dégâts massifs à courte portée.
+                <br><br>
+                Le Lanceflingue a fait sa première apparition dans Monster Hunter 2. Il a été retiré dans Monster Hunter 3, mais est revenu dans Monster Hunter Portable 3rd, Monster Hunter 3G et Monster Hunter 3 Ultimate. Il est également présent dans Monster Hunter 4/4 Ultimate, Monster Hunter Generations/Generations Ultimate et Monster Hunter World.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Azn6r5wTd48?si=Guk-xIpjAOpoEvQJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            <br>
+
+            <input type="button" class='button' id="button8" value="►" onclick="OnOff(8);">
+
+        </div>
+</div>
+
+
+<div class="morpho-box">
+
+        <div class='overlay' id="overlay9">
+            <img id="morpho" src="morpho.webp"><div class='paragraphe'><h3>Morpho-hache</h3></div>
+            <div class='texte' id="texte9">
+                La Morpho-Hache est décrite comme une merveille technologique, capable de lancer le Chasseur dans une combinaison de coups puissants et tranchants. Elle peut se transformer en mode épée, offrant des propriétés différentes grâce à une fiole spéciale qui ajoute des effets élémentaires, de statut ou de puissance. En mode épée, l'arme peut charger une attaque explosive. La Morpho-Hache offre une grande polyvalence grâce à ses deux modes et à la possibilité de changer de mode pendant les combos. Elle permet également une esquive latérale rapide, remplaçant la roulade traditionnelle.
+                <br><br>
+                Le mode hache offre une grande portée et permet d'atteindre les membres des monstres en vol, comme les pattes d'un Rathalos. Il dispose d'un combo infini (limité par l'endurance) d'attaques rapides en croix. Le mode épée, utilisant la fiole spéciale, est plus rapide mais moins puissant que la Grande Épée. Il permet des enchaînements verticaux et horizontaux, ainsi qu'une attaque explosive. L'épée ne rebondit jamais, mais retourne en mode hache lorsque la fiole est épuisée. Une barre d'énergie limite le temps passé en mode épée, se rechargeant avec le temps ou rapidement en mode hache.
+                <br><br>
+                Chaque Morpho-Hache utilise une fiole spécifique en mode épée, offrant différents effets : puissance, paralysie, dégâts élémentaires ou dragon. Il existe deux arbres d'évolution principaux (Hache en Os et Hache Sauvage) et sept arbres secondaires, ainsi que neuf armes légendaires. Cette variété permet aux chasseurs d'adapter leur Morpho-Hache à différents styles de jeu et monstres.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/toi52e8Lf0U?si=mxCKXmkiRc4ERBcH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            <br>
+
+            <input type="button" class='button' id="button9" value="►" onclick="OnOff(9);">
+
+        </div>
+</div>
+
+<div class="ig-box">
+
+        <div class='overlay' id="overlay11">
+            <img id="ig" src="ig.webp"><div class='paragraphe'><h3>Insectoglaive</h3></div>
+            <div class='texte' id="texte11">
+                L'Insectoglaive (IG) a été introduit pour la première fois dans Monster Hunter 4, apportant une nouvelle dimension au combat grâce à sa capacité à lancer le chasseur dans les airs à tout moment. Cette mobilité aérienne, combinée à des attaques rapides et fluides similaires à celles de l'Épée Longue, en fait une arme parfaitement adaptée à la verticalité introduite dans MH4.
+                <br><br>
+                L'Insectoglaive invoque un Kinsecte, un insecte compagnon, pour attaquer les monstres de différentes manières. Le chasseur peut envoyer le Kinsecte en ligne droite ou marquer le monstre avec des phéromones pour faciliter le ciblage. Lorsque le Kinsecte frappe le monstre, il draine une "essence" qui varie en couleur et en attribut selon la partie du corps touchée. Cette essence peut ensuite renforcer le chasseur lorsqu'il rappelle le Kinsecte.
+                <br><br>
+                Le Kinsecte, lorsqu'il n'est pas en attaque, se repose sur le bras droit du chasseur. Son utilisation stratégique est cruciale pour maximiser l'efficacité de l'Insectoglaive. Les chasseurs doivent apprendre à cibler les bonnes parties du monstre pour obtenir les essences désirées et à coordonner leurs attaques avec les mouvements du Kinsecte pour infliger des dégâts optimaux.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8wV7lPVW8q4?si=Zih5M3pAhaS3dnuG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            <br>
+
+            <input type="button" class='button' id="button11" value="►" onclick="OnOff(11);">
+
+        </div>
+</div>
+
+<div class="leger-box">
+
+        <div class='overlay' id="overlay12">
+            <img id="leger" src="leger.webp"><div class='paragraphe'><h3>Fusarbalète léger</h3></div>
+            <div class='texte' id="texte12">
+                Les Fusarbalètes Légers (LBG) sont des armes à distance qui privilégient la mobilité et la vitesse de rechargement. Ils permettent au chasseur de se déplacer à une allure normale et se dégaine/rengaine plus rapidement que les Fusarbalètes Lourds (HBG). Bien qu'ils n'offrent pas la même puissance brute que les HBG, leur maniabilité et leur vitesse de tir en font une arme populaire auprès des chasseurs. Ils sont également plus faciles à forger et à maîtriser
+                <br><br>
+                Les LBG excellent dans l'exploitation des faiblesses élémentaires des monstres. Ils sont particulièrement efficaces contre des monstres comme les Diablos (avec des munitions de glace) et les Kirin (avec des munitions plomb). Les LBG sont considérés comme la version la plus élémentaire des fusarbalètes, permettant aux chasseurs d'utiliser une grande variété de munitions élémentaires (eau, foudre, glace, feu). Ils sont souvent utilisés comme armes de support, tandis que les HBG sont privilégiés pour les dégâts bruts avec des munitions comme les perçantes, plomb ou frag.
+                <br><br>
+                Avant de choisir un LBG, il est essentiel de prendre en compte ses statistiques, notamment le recul et la vitesse de rechargement, qui varient en fonction des munitions utilisées. Les LBG peuvent être personnalisés avec des pièces comme un viseur variable, un canon long ou un silencieux pour améliorer leurs performances. Il est également crucial d'adapter le LBG à la chasse en cours, en choisissant les munitions appropriées et en tenant compte des faiblesses du monstre.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/laJFEKB0gMA?si=lzXD-Pnfc7Qwtjeu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            <br>
+
+
+            <input type="button" class='button' id="button12" value="►" onclick="OnOff(12);">
+
+        </div>
+</div>
+
+<div class="lourd-box">
+
+        <div class='overlay' id="overlay13">
+            <img id="lourd" src="lourd.webp"><div class='paragraphe'><h3>Fusarbalète lourd</h3></div>
+            <div class='texte' id="texte13">
+                Le Fusarbalète Lourd (HBG) est l'arme de choix pour les chasseurs privilégiant une puissance de feu maximale tout en maintenant une distance de sécurité avec les monstres. Bien qu'il soit plus lent que le Fusarbalète Léger (LBG), il offre la possibilité d'équiper un bouclier, permettant de bloquer les attaques. Cependant, les artilleurs expérimentés considèrent souvent le bouclier comme inutile, car il empêche l'utilisation d'un canon long (augmentant la puissance) et un artilleur actif n'en a pas besoin.
+                <br><br>
+                Contrairement au Fusarbalète Léger, qui excelle dans les dégâts élémentaires, le Fusarbalète Lourd se concentre généralement sur les dégâts bruts. Il utilise des munitions perforantes ou explosives pour infliger des dégâts massifs. Cependant, cette distinction s'est estompée avec Monster Hunter Portable 3rd et Monster Hunter 3 Ultimate, où certains Fusarbalètes Lourds peuvent tirer des munitions élémentaires en "Tir accroupi", offrant une plus grande flexibilité.
+                <br><br>
+                Avec les mises à jour de la série, le Fusarbalète Lourd a gagné en polyvalence. Dans les jeux récents, il existe des Fusarbalètes Lourds spécialisés dans chaque élément (feu, eau, foudre, glace et dragon), capables de tirer en "Tir accroupi". Cela élimine la différence de spécialisation élémentaire entre les Fusarbalètes Lourds et Légers, offrant aux chasseurs une plus grande variété d'options stratégiques.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ZcjGwUo8vjE?si=sqvuHSuavTJfz3ZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            <br>
+
+            <input type="button" class='button' id="button13" value="►" onclick="OnOff(13);">
+
+        </div>
+</div>
+
+
+
+<div class="arc-box">
+
+        <div class='overlay' id="overlay14">
+            <img id="arc" src="arc.webp"><div class='paragraphe'><h3>Arc</h3></div>
+            <div class='texte' id="texte14">
+                L'arc se distingue par sa rapidité d'utilisation, permettant aux chasseurs d'attaquer et de se déplacer simultanément. Son efficacité repose sur la connaissance des points faibles et des faiblesses élémentaires des monstres, car il offre une large gamme de dégâts élémentaires. Cette spécialisation permet aux archers d'adapter leur style de jeu en fonction des monstres rencontrés
+                <br><br>
+                L'arc offre une grande variété d'options grâce aux charges et aux enduits, qui doivent être choisis judicieusement. Les compétences d'armure sont également cruciales pour optimiser l'efficacité de l'arc. Les compétences spécifiques à l'archerie sont préférables, mais certaines compétences générales comme "Rechargement +2" peuvent être utiles. "Appétit" est une autre compétence précieuse, car elle réduit ou annule la perte d'endurance lors de la visée.
+                <br><br>
+                Pour les archers axés sur les dégâts élémentaires, la compétence "Elémental" améliore les effets des éléments de l'arc. Les archers peuvent également jouer un rôle de support en utilisant des arcs avec des enduits de paralysie, permettant d'immobiliser les monstres pour leurs coéquipiers. La compétence "Statut" renforce les effets des enduits de poison, de paralysie et de sommeil, offrant un contrôle supplémentaire sur le champ de bataille.
+                <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/6D0x3KLl8jA?si=3wb74oFjjxLIiqdq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            <br>
+
+            <input type="button" class='button' id="button14" value="►" onclick="OnOff(14);">
+
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+                                        `;
+            }
+
+
+
+
+
+
+
+
+            else if (typeContenu === 'lieux') {
+                container.style.background = 'rgba(243, 242, 224, 0.9)';
+
+                contenuDiv.innerHTML = `
+      
+                        <input type='range' id='taille' value='12' min='6' step='2' max='40'
+onchange="document.getElementById('doc').style.fontSize=this.value+'pt';">
+<div class='paragraphe'>
+Choisis la taille des caractères</div>
+           
+<div class='paragraphe' id='doc'>
+
+<div class='titre'><h1>Lieux</h1></div>
+
+                            <div class='sous-titre'><h1><strong>Les Plaines venteuses</strong></h1></div>
+
+
+        
+            <h2><strong>Un environnement extrême et dynamique</strong></h2>
+        Les Plaines venteuses se caractérisent par des conditions climatiques extrêmes, avec de violentes tempêtes de sable accompagnées de tonnerre. Cet environnement hostile transformera la chasse en un défi constant, où les joueurs devront s'adapter aux changements météorologiques soudains. Capcom met l'accent sur un écosystème vivant, où la faune et la flore réagissent dynamiquement aux conditions environnantes, offrant une expérience de chasse immersive et imprévisible.
+        <br><br>
+        <h2><strong>Une faune et une flore uniques</strong></h2>
+
+        Les Plaines venteuses abritent une faune et une flore uniques, spécialement adaptées aux conditions climatiques extrêmes. Les joueurs peuvent s'attendre à rencontrer de nouvelles créatures et des monstres inédits, ainsi que des plantes et des ressources spécifiques à cet écosystème. La découverte de ces espèces et de leurs interactions sera un élément clé de l'exploration des Plaines venteuses.
+        <br><br>
+        <h2><strong>Le village de Kunafa et l'exploration</strong></h2>
+        Au cœur des Plaines venteuses se trouve le village de Kunafa, habité par les Seikret. Ce village servira de point de départ pour l'expédition de recherche des joueurs, qui exploreront les Terres interdites. Les joueurs découvriront la culture et les traditions des Seikret, ainsi que leur relation avec l'environnement et les créatures qui l'habitent. Les camps temporaires, disséminés dans la zone, offriront des points de repos et de ravitaillement essentiels pour les longues expéditions.
+        <br><br>
+
+
+
+
+
+
+
+    <div class="theme-controls">
+        <strong>Contrôles par thème :</strong><br>
+        <div class="btn" onclick="imagemulti('plaine', 1200)">Agrandir Plaines</div>
+        <div class="btn" onclick="imagemulti('plaine', 700)">Rétrécir Plaines</div>
+
+    </div>
+
+
+    <div class="image-plaine">
+
+        <div class="image-container">
+            <img src="plaine1.png" id="image1" class="mini-image plaine">
+            <div class="btn" onclick="imagesolo('image1', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image1', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="plaine.webp" id="image2" class="mini-image plaine">
+            <div class="btn" onclick="imagesolo('image2', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image2', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="plaine2.png" id="image3" class="mini-image plaine">
+            <div class="btn" onclick="imagesolo('image3', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image3', 700)">Rétrécir</div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+                            <div class='sous-titre'><h1><strong>La Forêt écarlate</strong></h1></div>
+
+
+
+        <h2><strong>Un environnement luxuriant et mystérieux</strong></h2>
+        La Forêt écarlate se distingue par sa végétation dense et ses arbres gigantesques, ainsi que par ses étendues d'eau abondantes. La couleur rougeâtre de l'eau ajoute une touche mystérieuse à cet environnement, suggérant des particularités uniques. Les joueurs peuvent s'attendre à explorer une forêt luxuriante et pleine de vie, mais également pleine de dangers cachés.
+        <br><br>
+        <h2><strong>Des conditions climatiques extrêmes</strong></h2>
+
+       La Forêt écarlate est sujette à des tempêtes torrentielles qui inondent la zone. Ces conditions climatiques extrêmes modifieront l'environnement et le comportement des monstres, offrant de nouveaux défis aux chasseurs. Les joueurs devront s'adapter à ces changements soudains et utiliser l'environnement à leur avantage.
+        <br><br>
+        <h2><strong>Une faune et une flore uniques</strong></h2>
+        La Forêt écarlate abrite une faune et une flore uniques, adaptées aux conditions humides et luxuriantes de cet écosystème. Les joueurs peuvent s'attendre à rencontrer de nouveaux monstres et des créatures inédites, ainsi que des plantes et des ressources spécifiques à cet environnement. La découverte de ces espèces et de leurs interactions sera un élément clé de l'exploration de la Forêt écarlate.
+        <br><br>
+            <h2><strong>Le repaire des Wudwuds</strong></h2>
+        La Forêt écarlate est habitée par une tribu de Lyniens appelés Wudwuds. Leur repaire, situé au cœur de la forêt, sera un lieu important à explorer. Les joueurs pourront interagir avec les Wudwuds, découvrir leur culture et leurs traditions, et peut-être même obtenir leur aide dans leur chasse.
+        <br><br>
+
+
+
+
+
+
+
+    <div class="theme-controls">
+        <strong>Contrôles par thème :</strong><br>
+        <div class="btn" onclick="imagemulti('foret', 1200)">Agrandir Forêt</div>
+        <div class="btn" onclick="imagemulti('foret', 700)">Rétrécir Forêt</div>
+
+    </div>
+
+
+    <div class="image-foret">
+
+        <div class="image-container">
+            <img src="foret1.png" id="image4" class="mini-image foret">
+            <div class="btn" onclick="imagesolo('image4', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image4', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="foret.jpg" id="image5" class="mini-image foret">
+            <div class="btn" onclick="imagesolo('image5', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image5', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="foret2.png" id="image6" class="mini-image foret">
+            <div class="btn" onclick="imagesolo('image6', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image6', 700)">Rétrécir</div>
+        </div>
+
+    </div>
+
+
+<br><br>
+
+                            <div class='sous-titre'><h1><strong>Le Bassin pétrolier</strong></h1></div>
+
+
+
+        <h2><strong>Un paysage industriel et dangereux</strong></h2>
+        Le Bassin pétrolier se distingue par ses paysages industriels, avec des puits de forage, des pipelines et des mares de pétrole brut. Cet environnement est à la fois fascinant et dangereux, avec des zones enflammées et des émanations toxiques. Les joueurs devront faire preuve de prudence et de stratégie pour survivre dans ce lieu hostile.
+        <br><br>
+        <h2><strong>Des conditions climatiques extrêmes</strong></h2>
+Le Bassin pétrolier est sujet à des éruptions volcaniques et des coulées de lave, qui modifient le paysage et le comportement des monstres. Ces conditions climatiques extrêmes ajouteront une dimension supplémentaire au défi de la chasse. Les joueurs devront s'adapter à ces changements soudains et utiliser l'environnement à leur avantage.
+        <br><br>
+        <h2><strong>Une faune et une flore uniques</strong></h2>
+       Le Bassin pétrolier abrite une faune et une flore uniques, adaptées aux conditions extrêmes de cet environnement. Les joueurs peuvent s'attendre à rencontrer de nouveaux monstres et des créatures inédites, ainsi que des plantes et des ressources spécifiques à cet environnement. La découverte de ces espèces et de leurs interactions sera un élément clé de l'exploration du Bassin pétrolier.
+        <br><br>
+            <h2><strong>Des ressources précieuses et des dangers cachés</strong></h2>
+        Le Bassin pétrolier regorge de ressources précieuses, telles que le pétrole brut et les minéraux rares. Cependant, ces ressources sont souvent protégées par des monstres puissants et des dangers environnementaux. Les joueurs devront évaluer les risques et les avantages avant de s'aventurer dans les zones les plus dangereuses du Bassin pétrolier.
+        <br><br>
+
+
+
+
+
+
+
+    <div class="theme-controls">
+        <strong>Contrôles par thème :</strong><br>
+        <div class="btn" onclick="imagemulti('bassin', 1200)">Agrandir Bassin</div>
+        <div class="btn" onclick="imagemulti('bassin', 700)">Rétrécir Bassin</div>
+
+    </div>
+
+
+    <div class="image-bassin">
+
+        <div class="image-container">
+            <img src="bassin1.png" id="image7" class="mini-image bassin">
+            <div class="btn" onclick="imagesolo('image7', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image7', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="bassin.png" id="image8" class="mini-image bassin">
+            <div class="btn" onclick="imagesolo('image8', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image8', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="bassin2.png" id="image9" class="mini-image bassin">
+            <div class="btn" onclick="imagesolo('image9', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image9', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="bassin3.png" id="image10" class="mini-image bassin">
+            <div class="btn" onclick="imagesolo('image10', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image10', 700)">Rétrécir</div>
+        </div>
+
+    </div>
+
+
+<br><br>
+                            <div class='sous-titre'><h1><strong>La Falaise de glace</strong></h1></div>
+
+
+
+        <h2><strong>Un paysage glacial et vertical</strong></h2>
+        La Falaise de glace se distingue par ses parois rocheuses abruptes et ses formations de glace imposantes. Cet environnement vertical offrira de nouveaux défis aux chasseurs, qui devront utiliser des techniques d'escalade et de déplacement spécifiques pour atteindre les zones les plus reculées. Les paysages seront probablement à couper le souffle, et hostile à la fois.
+        <br><br>
+        <h2><strong>Des conditions climatiques extrêmes</strong></h2>
+La Falaise de glace est soumise à des tempêtes de neige violentes et des vents glaciaux, qui réduisent la visibilité et affectent le comportement des monstres. Ces conditions climatiques extrêmes ajouteront une dimension supplémentaire au défi de la chasse. Les joueurs devront s'adapter à ces changements soudains et utiliser l'environnement à leur avantage.
+<br><br>
+        <h2><strong>Une faune et une flore uniques</strong></h2>
+       La Falaise de glace abrite une faune et une flore uniques, adaptées aux conditions glaciales de cet environnement. Les joueurs peuvent s'attendre à rencontrer de nouveaux monstres et des créatures inédites, ainsi que des plantes et des ressources spécifiques à cet environnement. La découverte de ces espèces et de leurs interactions sera un élément clé de l'exploration de la Falaise de glace.
+       <br><br>
+            <h2><strong>Des dangers cachés et des ressources précieuses</strong></h2>
+       La Falaise de glace regorge de dangers cachés, tels que des crevasses, des avalanches et des pièges de glace. Cependant, cet environnement offre également des ressources précieuses, telles que des minéraux rares et des plantes médicinales. Les joueurs devront faire preuve de prudence et d'ingéniosité pour survivre dans ce lieu hostile et tirer parti de ses richesses.
+        <br><br>
+
+
+
+
+
+
+
+    <div class="theme-controls">
+        <strong>Contrôles par thème :</strong><br>
+        <div class="btn" onclick="imagemulti('falaise', 1200)">Agrandir Falaise</div>
+        <div class="btn" onclick="imagemulti('falaise', 700)">Rétrécir Falaise</div>
+
+    </div>
+
+
+    <div class="image-falaise">
+
+        <div class="image-container">
+            <img src="falaise1.png" id="image11" class="mini-image falaise">
+            <div class="btn" onclick="imagesolo('image11', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image11', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="falaise.webp" id="image12" class="mini-image falaise">
+            <div class="btn" onclick="imagesolo('image12', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image12', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="falaise2.png" id="image13" class="mini-image falaise">
+            <div class="btn" onclick="imagesolo('image13', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image13', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="falaise3.png" id="image14" class="mini-image falaise">
+            <div class="btn" onclick="imagesolo('image14', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image14', 700)">Rétrécir</div>
+        </div>
+
+    </div>
+
+
+
+<br><br>
+                            <div class='sous-titre'><h1><strong>Les Ruines de Wyveria</strong></h1></div>
+
+
+        <h2><strong>Un vestige d'une civilisation perdue</strong></h2>
+        Les Ruines de Wyveria sont les vestiges d'une ancienne capitale, autrefois florissante, mais aujourd'hui réduite à des ruines délabrées. Ce lieu témoigne d'une civilisation disparue, laissant derrière elle des structures en ruine et des traces de son passé glorieux.
+        <br><br>
+        <h2><strong>Un lieu de découverte et de recherche</strong></h2>
+Olivia, un membre de l'équipe de recherche, a découvert des phénomènes étranges au sein des ruines, ainsi que des traces d'une espèce de forêt, le Lala Barina, qui n'est pas originaire de cette région. Ces découvertes suscitent des questions et des mystères, incitant les joueurs à explorer les ruines à la recherche de réponses.
+<br><br>
+        <h2><strong>Une faune et une flore diversifiées</strong></h2>
+       Malgré leur état de délabrement, les Ruines de Wyveria abritent une faune et une flore diversifiées. Les joueurs pourront rencontrer de grands monstres tels que le Quematrice et le Lala Barina, ainsi que de petits monstres et des créatures endémiques uniques à cet environnement.
+
+       <br><br>
+            <h2><strong>Des ressources précieuses et des dangers cachés</strong></h2>
+       Les ruines regorgent de ressources précieuses, telles que des minéraux rares et des plantes médicinales. Cependant, elles sont également le théâtre de dangers cachés, tels que des pièges et des monstres puissants. Les joueurs devront faire preuve de prudence et d'ingéniosité pour survivre dans cet environnement hostile et tirer parti de ses richesses.
+       <br><br>
+         <h2><strong>Un lieu chargé d'histoire</strong></h2>
+Les ruines sont le lieu de plusieurs quêtes, et de découvertes importantes pour l'histoire du jeu.
+<br><br>
+
+
+
+
+
+
+    <div class="theme-controls">
+        <strong>Contrôles par thème :</strong><br>
+        <div class="btn" onclick="imagemulti('ruine', 1200)">Agrandir Ruines</div>
+        <div class="btn" onclick="imagemulti('ruine', 700)">Rétrécir Ruines</div>
+
+    </div>
+
+
+    <div class="image-ruine">
+
+        <div class="image-container">
+            <img src="ruine1.png" id="image15" class="mini-image ruine">
+            <div class="btn" onclick="imagesolo('image15', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image15', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="ruine.avif" id="image16" class="mini-image ruine">
+            <div class="btn" onclick="imagesolo('image16', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image16', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="ruine2.png" id="image17" class="mini-image ruine">
+            <div class="btn" onclick="imagesolo('image17', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image17', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="ruine3.png" id="image18" class="mini-image ruine">
+            <div class="btn" onclick="imagesolo('image18', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image18', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="ruine4.png" id="image19" class="mini-image ruine">
+            <div class="btn" onclick="imagesolo('image19', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image19', 700)">Rétrécir</div>
+        </div>
+
+    </div>
+
+
+
+<br><br>
+                            <div class='sous-titre'><h1><strong>Le Vallon meurtri</strong></h1></div>
+
+
+
+        <h2><strong>Un paysage accidenté et dangereux</strong></h2>
+        Le Vallon meurtri se caractérise par un terrain accidenté, avec des ravins profonds, des falaises escarpées et des zones de végétation dense. Cet environnement offre de nouveaux défis aux chasseurs, qui devront maîtriser des techniques d'escalade et de déplacement spécifiques pour naviguer dans ce paysage hostile.
+        <br><br>
+        <h2><strong>Une faune et une flore uniques</strong></h2>
+Le Vallon meurtri abrite une faune et une flore diversifiées, adaptées aux conditions difficiles de cet environnement. Les joueurs peuvent s'attendre à rencontrer de nouveaux monstres et des créatures inédites, ainsi que des plantes et des ressources spécifiques à cet écosystème. La découverte de ces espèces et de leurs interactions sera un élément clé de l'exploration du Vallon meurtri.
+<br><br>
+        <h2><strong>Des dangers cachés et des ressources précieuses</strong></h2>
+       Le Vallon meurtri regorge de dangers cachés, tels que des pièges naturels, des zones de végétation toxique et des monstres puissants. Cependant, cet environnement offre également des ressources précieuses, telles que des minéraux rares et des plantes médicinales. Les joueurs devront faire preuve de prudence et d'ingéniosité pour survivre dans ce lieu hostile et tirer parti de ses richesses.
+       <br><br>
+            <h2><strong>Un lieu de quêtes et de défis</strong></h2>
+       Le Vallon meurtri sera le théâtre de nombreuses quêtes et défis, mettant à l'épreuve les compétences des chasseurs. Les joueurs devront affronter des monstres redoutables, résoudre des énigmes environnementales et surmonter des obstacles naturels pour progresser dans leur aventure.
+       <br><br>
+
+
+
+
+
+
+    <div class="theme-controls">
+        <strong>Contrôles par thème :</strong><br>
+        <div class="btn" onclick="imagemulti('vallon', 1200)">Agrandir Vallon</div>
+        <div class="btn" onclick="imagemulti('vallon', 700)">Rétrécir Vallon</div>
+
+    </div>
+
+
+    <div class="image-vallon">
+
+        <div class="image-container">
+            <img src="vallon.png" id="image20" class="mini-image vallon">
+            <div class="btn" onclick="imagesolo('image20', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image20', 700)">Rétrécir</div>
+        </div>
+
+        <div class="image-container">
+            <img src="vallon1.jpg" id="image21" class="mini-image vallon">
+            <div class="btn" onclick="imagesolo('image21', 1200)">Agrandir</div>
+            <div class="btn" onclick="imagesolo('image21', 700)">Rétrécir</div>
+        </div>
+
+
+
+    </div>
+
+
+
+<div class='sous-titre'><h1><a href="https://atlasforge.gg/monster-hunter-wilds/map/forbidden_lands">Pour plus d'information sur les cartes .</a></h1></div>
+</div>
+
+</div>
+</div>
+
+
+                        `;
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+            else if (typeContenu === 'monstre') {
+                container.style.backgroundImage = "url('papier.jpg";
+                container.style.backgroundSize = "100% 100%";
+                container.style.backgroundRepeat = "no-repeat"; 
+                contenuDiv.innerHTML = `
+
+
+                                                 <div class='titre'><h1>Monstre</h1></div>
+
+                            <br>
+                            <div class='centre'><button class='notif' onclick="chasse()">❗✉️</button></div>
+                            <br>
+
+
+
+
+
+
+
+<div class="container-bestiaire">
+
+       
+        <div class="monster-box">
+
+            <div class='overlay-monstre' id="overlay15">
+                <img class="monstre" src="Chatacabra_Icon.webp"><div class='paragraphe'><h3>Chatacabra</h3></div>
+                <div class='texte' id="texte15">
+                    
+                    <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+                    Cet amphibien trapu a un corps tout en muscle et une démarche quadrupède proche des Bêtes à crocs simiesques comme le Rajang. Sa peau verte est très résistante et jonchée de petites excroissances. Sa tête ressemble à celle d'un crocodile auquel on aurait raccourci le museau, et sa mâchoire inférieure rappelle celle du Deviljho.
+                    Le Chatacabra dispose d'une immense langue épineuse longue de plusieurs mètres. Chacune de ses pattes compte trois doigts, et à l'image du Rajang, ses membres supérieurs sont bien plus développés que ses membres inférieurs.
+                    <br><br>
+                    <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+                    Le Chatacabra se démarque des autres Amphibiens par sa posture et ses puissants bras, qui rappellent les Bêtes à crocs "singes" comme le Congalala.
+                    Il est de nature vorace et use de sa langue pour attraper des proies telles que les Bulaqchi. Sa salive adhésive lui sert pour chasser et recouvrir ses bras de roche, augmentant ses capacités combatives. 
+                    <br><br>
+                    <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+                    Le Chatacabra n'a été observé que dans les Plaines venteuses, un habitat aride au climat instable situé dans les Terres Interdites. 
+                    <br><br>
+                    <img class="monstre-image" src="chatacabra.webp">
+                    <br><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xV9qXwjzjA0?si=YXIlzQAq_Mp5LCam" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                </div>
+                <br>
+
+                <input type="button" class='button' id="button15" value="►" onclick="OnOff(15);">
+
+            </div>
+
+
+
+        </div>
+
+
+
+    <div class="monster-box">
+
+            <div class='overlay-monstre' id="overlay16">
+                <img class="monstre" src="Quematrice_Icon.webp"><div class='paragraphe'><h3>Quematrice</h3></div>
+                <div class='texte' id="texte16">
+
+                    <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+                    Le Quematrice est une Wyverne de terre ressemblant à une cocatrice, une créature ayant des attributs de coq et de reptile.
+                    Son corps grisâtre a des tons bleutés et des rayures rouges, en particulier au niveau de la tête, de la queue et des écailles pointues du dos. Sa tête a des crêtes écarlates au-dessus des yeux et du crâne, rappelant un coq domestique, ainsi que des barbillons de chaque côté de la gueule. Sa longue queue est bardée d'excroissances de peau secrétant une huile inflammable.
+                    <br><br>
+                    <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+                    C'est un carnivore agressif et opportuniste, qui chasse très peu et préfère se disputer des charognes avec d'autres petits monstres. Le fluide qu'il secrète libère un gaz qu'il enflamme avec des étincelles en frottant sa queue au sol.
+                    <br><br>
+                    <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+                    La Quematrice est présente dans les Plaines venteuses et les Ruines de Wyveria.
+                    <br><br>
+                    <img class="monstre-image" src="quematrice.webp">
+                    <br><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8WhcGGno18Y?si=a-tUpPk5ebWkLgpi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <br>
+
+                <input type="button" class='button' id="button16" value="►" onclick="OnOff(16);">
+
+            </div>
+
+    </div>
+
+
+    <div class="monster-box">
+
+            <div class='overlay-monstre' id="overlay17">
+                <img class="monstre" src="Lala_Barina_Icon.webp"><div class='paragraphe'><h3>Lala Barina</h3></div>
+                <div class='texte' id="texte17">
+
+                    <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+                    Temnoceran à la fourrure blanche, elle dispose de 2 paires de pattes gris foncées à la pointe orangée. Ses pédipalpes sont recroquevillés sous son corps, et une fois déployés, sont aussi grands que les pattes et se finissent par trois grandes griffes. Ses yeux et chélicères sont rouges et elle possède un dard à l'extrémité de son corps.
+                    Son abdomen est très particulier car il peut éclore pour ressembler à une rose d'un rouge vif. Cet abdomen peut répandre des "fleurons" -des petites fleurs- qui rappellent les pappus (touffes de poil) d'un pissenlit.
+                    <br><br>
+                    <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+                   Elle tisse un nid de toile écarlate où elle piège ses proies grâce à ses "fleurons" paralysants, qui sont produits par association entre de l'eau et ses fluides. Ses mouvements gracieux en combat et son abdomen à l'apparence de rose en font un monstre agréable à l'oeil, mais toutefois mortel.
+                    <br><br>
+                    <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+                    Elle vit principalement dans la Forêt écarlate, mais a également été aperçue dans les Ruines de Wyveria.
+                    <br><br>
+                    <img class="monstre-image" src="lala-barina.webp">
+                    <br><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VUH2IqDhd00?si=zRg1JnMA2nFilsKN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <br>
+
+                <input type="button" class='button' id="button17" value="►" onclick="OnOff(17);">
+
+            </div>
+
+    </div>
+
+
+
+    <div class="monster-box">
+
+            <div class='overlay-monstre' id="overlay18">
+                <img class="monstre" src="Congalala_Icon.webp"><div class='paragraphe'><h3>Congalala</h3></div>
+                <div class='texte' id="texte18">
+
+                    <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+                    Le Congalala est semblable au Conga mais en beaucoup plus grand. Il ressemble à un orang-outan géant doté d'une fourrure rose avec des touches de jaune et de vert, d'une tête d'hippopotame, de grandes griffes et d'une longue queue préhensible.
+                    Sous son pelage rose, il possède un épais cuir gris, visible notamment au niveau de la tête, du ventre et des extrémités. Il a une crête au sommet de son crâne, fait de cheveux lissés en forme de pic pour signifier qu'il est le chef de meute. Ses mains sont armées d'impressionnantes griffes tandis que ses pieds ressemblent plus à des pattes de lion. Son postérieur est exposé et le bout de sa queue peut agir comme une "main" pour saisir des objets.
+                    Lorsqu'il est en colère, son visage et son postérieur deviennent rouge.
+                    <br><br>
+                    <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+                    Même si son apparence peut prêter à sourire, le Congalala est une créature intelligente à ne pas sous-estimer. Plutôt docile, il s'accomode bien à la présence d'herbivores, tant qu'ils partagent une grande couchette. Il peut rapidement devenir agressif envers tout ce qui perturbe son repas ou le surprend. C'est le chef des Conga, ses cheveux jaunes ayant été coiffés en pique afin de le démontrer.
+                    C'est un omnivore avec un grand appétit et une préférence pour les champignons. Son régime alimentaire influe directement sur son souffle, mais lui donne également des flatulences à l'odeur nauséabonde.
+                    <br><br>
+                    <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+                    Cet animal vit généralement dans les régions au climat humide et tempéré comme la Forêt primitive, la Vieille jungle, le Mont céleste, la Forêt écarlate ou le Marais. Il privilégie les zones avec des champignons dont il peut s'en régaler.
+                    <br><br>
+                    <img class="monstre-image" src="congalala.webp">
+                    <br><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rOX8X6YfYso?si=os52UdC0ZHk1m4CD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <br>
+
+                <input type="button" class='button' id="button18" value="►" onclick="OnOff(18);">
+
+            </div>
+
+    </div>
+
+
+
+
+
+    <div class="monster-box">
+
+            <div class='overlay-monstre' id="overlay19">
+                <img class="monstre" src="Balahara_Icon.webp"><div class='paragraphe'><h3>Balahara</h3></div>
+                <div class='texte' id="texte19">
+
+                    <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+                    Léviathan ayant un corps serpentin, il est couvert d'une solide carapace de couleur noire. Les plus grosses écailles de cette carapace sont agencées en spirale le long de son corps, rappelant le foret d'une perceuse. Son ventre est de couleur sable et il possède des branchies sur le cou, visibles lorsqu'il rugit.
+                    Sa mâchoire est sa partie anatomique la plus distinctive. En effet, elle se divise en 3 mandibules à équidistance et l'intérieur de sa gueule émet une lueur bleue vive. Ces mâchoires sont jonchées de ce qui semble être 2 rangées de dents sur une base très souple, chacune pouvant se mouvoir indépendamment de l'autre. Étonnamment, les yeux de ce monstre semblent être placés à l'intérieur de cette bouche, sur les "gencives", et ressemblent à de nombreux petits points lumineux bleus. Cette particularité est similaire à certains bivalves comme les coquilles Saint-Jacques dont les yeux sont situés à l'intérieur de la coquille, sur les bords du manteau. Les tissus tapissant l'intérieur des gueules peuvent également se gonfler.
+                    <br><br>
+                    <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+                    Agressifs et territoriaux, les Balahara nagent sous le sable pour surprendre leurs proies. Ils se déplacent en meute de dizaines d'individus et utilisent leur odorat pour poursuivre leurs victimes. Leur ouïe fine les rend sensibles aux sons forts et aux bombes soniques.
+                    <br><br>
+                    <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+                    Le Balahara a été seulement observé dans les Plaines venteuses.
+                    <br><br>
+                    <img class="monstre-image" src="balahara.webp">
+                    <br><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DoaXgZSym1s?si=cAWnaz6MjMo1FVWB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <br>
+
+                <input type="button" class='button' id="button19" value="►" onclick="OnOff(19);">
+
+            </div>
+
+    </div>
+
+
+
+
+
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay20">
+        <img class="monstre" src="Doshaguma_Icon.webp"><div class='paragraphe'><h3>Doshaguma</h3></div>
+        <div class='texte' id="texte20">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Créature quadrupède de taille moyenne rappelant à la fois l'ours et le lion, elle possède une forte corpulence bien qu'elle vive dans des habitats arides.
+            Elle a une fourrure brune et une épaisse crinière jaunâtre au niveau des épaules et de la queue, cette dernière semblant représenter environ un tiers de son corps. Sa face écrasée est nue et présente de nombreux plis cachant ses petits yeux, et son front possède deux excroissances osseuses plates. Sa gueule est armée de crocs grossiers et pointus, dont 2 grands sur la mâchoire inférieure, agissant comme des défenses.
+            Le Doshaguma dispose de longues griffes au bout de ses puissantes pattes, qui lui permettent d'ailleurs de courir sur de grandes distances malgré son poids.
+            Les chefs de meute sont plus imposants, avec une face et une fourrure rouges.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Coriace et territoriale, le Doshaguma est une créature belliqueuse qui tend à se réunir en grandes meutes. Malgré ce comportement pouvant paraître sociable, les membres du groupes ne sont pas aussi coopératifs et il est possible qu'ils agissent ainsi juste pour augmenter leurs chances d'un repas facile lorsque l'un d'eux attrape une proie. Les Chefs Doshaguma sont encore plus hostiles avec leur congénères pour les soumettre.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Il a été uniquement aperçu dans les Terres Interdites où il peuple des habitats très divers comme les Plaines venteuses ou la Forêt écarlate.
+
+            <br><br>
+            <img class="monstre-image" src="doshaguma.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Sk2XLKdMGsE?si=4GfomeR1dvX7gxM0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button20" value="►" onclick="OnOff(20);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay21">
+        <img class="monstre" src="Uth_Duna_Icon.webp"><div class='paragraphe'><h3>Uth Duna</h3></div>
+        <div class='texte' id="texte21">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            L'Uth Duna est un Léviathan trapu (pouvant vaguement rappeler un Amatsu), dont l'apparence rappelle celle d'un varan avec une tête de murène et une queue courte. Il a des écailles rouges rayées de bleu et de vert foncé avec un ventre blanchâtre, évoquant le poisson arapaïma. Sa mâchoire a ce qui s'apparente à des nageoires ou des branchies sur les côtés et ses yeux sont entourés de rayures jaunes-dorées.
+            Son corps possède des sortes de longues nageoires sur la tête, les épaules, les bras et la queue. Ce sont en réalité des voiles qu'il crée à partir d'eau et de ses fluides corporels. Ces voiles lui servent de protection et se rétractent lorsqu'ils sont abîmés.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Prédateur apex de la forêt écarlate, il semble peu apprécier les intrus. Il se manifeste surtout lors des averses quand le niveau des rivières augmente (le Déluge), l'eau lui donnant un avantage lors de ses chasses.
+
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            L'Uth Duna a été seulement observé dans la forêt écarlate pour le moment, étant parfaitement adapté à son milieu humide.
+            <br><br>
+            <img class="monstre-image" src="uth-duna.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dPm67GyxwhE?si=vrDJ6-jfqm796C_f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button21" value="►" onclick="OnOff(21);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay22">
+        <img class="monstre" src="Rompopolo_Icon.webp"><div class='paragraphe'><h3>Rompopolo</h3></div>
+        <div class='texte' id="texte22">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Le Rompopolo est une Wyverne de terre avec une apparence quelque peu exotique, ayant des caractéristiques rappelant des insectes comme le moustique. Son corps bleu foncé possède des marbrures d'un bleu plus clair, mais il se démarque surtout par des boursouflures sur la tête, le dos et la queue, qui sont des sacs remplis de gaz. Ces sacs ont, sur leurs flancs, des ouvertures ressemblant à des trachéoles, et lui permettent d'évacuer le gaz.
+            C'est actuellement la seule Wyverne de terre à posséder un bec, un attribut que l'on retrouve plutôt chez les Wyvernes rapaces. Ce bec ressemble à un proboscis de moustique et abrite une longue langue par laquelle il peut libérer du gaz toxique. Sous ses grands yeux rouges au regard pénétrant, on peut apercevoir d'étranges organes de part et d'autre du bec, ressemblant à des tuyaux.
+            Ses bras se terminent en une longue griffe à pointe rose à la façon d'une mante religieuse et sa queue a une sorte de dard par laquelle il peut injecter du gaz. Ses pattes arrières, quant à elles, ont ce qui semble être des ventouses à la manière du Gigginox.
+            De manière générale, la silhouette de ce monstre évoque un moustique, les sacs de sa tête rappellant des yeux, ceux du dos, un thorax, et la queue, un abdomen.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Le Rompopolo utilise son gaz en tant qu'arme et outil de chasse : en déchargeant son gaz dans le goudron, il provoque des explosions qui font remonter les petits animaux dont il se nourrit.
+            C'est un monstre très territorial et agressif, mais à la merci de prédateurs plus puissants comme l'Ajarakan.
+
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Actuellement, il a été uniquement aperçu dans le Bassin pétrolier. Le goudron abrite les créatures dont il se nourrit et lui sert d'arme lorsqu'il doit se défendre.
+
+            <br><br>
+            <img class="monstre-image" src="rompopolo.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/loSaeIB8TK4?si=yxs_F7Cv2wvrn-bD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button22" value="►" onclick="OnOff(22);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay23">
+        <img class="monstre" src="Rey_Dau_Icon.webp"><div class='paragraphe'><h3>Rey Dau</h3></div>
+        <div class='texte' id="texte23">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Le Rey Dau est une Wyverne volante recouverte d'écailles pointues de couleur or et avec un abdomen noir. Ses ailes sont composées d'une membrane aux motifs abstraits et d'un doigt particulièrement long recouvert de plaques acérées.
+            Cette créature est typiquement reconnaissable à ses cornes perpendiculaires à sa tête et dans le prolongement l'une de l'autre à la manière du Rajang. Elles sont capables de pivoter de façon à être alignées par rapport au reste du corps et lui servent notamment à décharger son électricité sous forme de rayons. Son museau est court avec une double rangée de crocs et son cou a, de chaque côté dans sa longueur, une fente qui brille de bleu lorsque le monstre utilise ses attaques électriques.
+            Lorsqu'il est chargé en énergie, les griffes de ses ailes et sa queue brillent d'un bleu profond.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Agressif et territorial, le Rey Dau est le prédateur apex de sa région avec la particularité de pouvoir emmagasiner la foudre des tempêtes de son environnement pour l'utiliser comme arme.
+            Le contact entre le sable et l'électricité qu'il accumule crée de la fulgurite sur son corps, ce qui augmente ses attaques. Cette fulgurite émet un tintement assez caractéristique lorsqu'elle frotte contre la carapace du monstre. Les habitants de Kunafa utilisent ceci à leur avantage, ornant leur village de cristaux de fulgurite qui, en se balançant au vent, produisent ce son typique et éloignent les monstres.
+            Les cornes du Rey Dau possèdent des muscles à leur base qui leur permettent de s'incliner. Il les pivote pour lancer son attaque où il décharge l'énergie accumulée sous forme de rayon.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Il a été uniquement aperçu dans les Plaines venteuses, majoritairement durant les tempêtes de sable.
+
+            <br><br>
+            <img class="monstre-image" src="rey-dau.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UmEdarY2zpU?si=knZLRdIFsytWA4m1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button23" value="►" onclick="OnOff(23);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay24">
+        <img class="monstre" src="Nerscylla_Icon.webp"><div class='paragraphe'><h3>Nerscylla</h3></div>
+        <div class='texte' id="texte24">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            La Nerscylla est un Temnoceran recouvert d'une peau de Gypceros.
+            Semblable à une énorme araignée, elle a un exosquelette blanc avec des parties oranges et brunes, des marques bleutés, et des touffes de poils aux pattes et aux différentes sections de son corps. Ce dernier est en grande partie recouvert de peau de Gypceros, maintenue par de grands piques mauves sur son abdomen. Ses 4 longues et puissantes pattes lui permettent de se déplacer très rapidement.
+            Elle est armée de deux grands pédipalpes (membres caractéristiques des arachnides se situant près de la bouche) se terminant par un crochet effilé, utile aussi bien pour agripper une proie que pour se suspendre aux murs. Son abdomen possède un dard pouvant endormir ses assaillants ou, chez les Nerscyllas plus âgées, infliger un poison mortel.
+            Elle possède d'énormes chélicères rétractables recouvertes de poison, et 6 yeux bleus.
+            Elle porte un cuir de Gypceros pour se protéger et se camoufler. Sa sous-espèce, la Nerscylla spectrale fait de même, mais utilise à la place une peau de Khezu.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            C'est une prédatrice rusée qui piège ses proies dans sa toile. Elle use de son venin pour affaiblir ses victimes et conserve leur corps dans des cocons. Bien qu'elle raffole des Gypceros, elle se nourrit de toute créature ayant le malheur de finir dans ses pièges.
+            Elle possède l'étrange et effrayante caractéristique d'écorcher les Gypceros qu'elle a attrapé pour habiller son corps de leur peau. Leur cuir violacé sert alors de camouflage et de protection au corps blanc de la Nerscylla. Cependant, même si elle conserve les propriétés isolantes des peaux de Gypceros, elle devient par conséquent très faible au Feu.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            On trouve surtout les Nerscylla dans des environnements sombres comme les cavernes, marais et forêts. Elles tissent leurs nids de toile solide dans le Vallon immergé et peuvent être aperçues dans la Forêt primitive, le Bois éternel et le Marais. Elles n'ont cependant jamais été aperçues dans des zones dont les Gypceros sont absents. Elles nichent également près des terres agricoles, où le bétail est présent, et où elles peuvent occasionnellement chasser les fermiers qui ont la malchance de tomber sur elles.
+
+            <br><br>
+            <img class="monstre-image" src="nerscylla.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-HNjGpEagzs?si=TQxo-VtInTdO-oSK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button24" value="►" onclick="OnOff(24);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay25">
+        <img class="monstre" src="Hirabami_Icon.webp"><div class='paragraphe'><h3>Hirabami</h3></div>
+        <div class='texte' id="texte25">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            L'Hirabami a un corps plat et allongé recouvert d'écailles violettes avec le dessous gris foncé.
+            Sa tête a des caractéristiques ophidiennes, avec de petits yeux ronds et une mâchoire inférieure pouvant s'écarter horizontalement. Une sorte de capuchon de cobra en deux parties s'étend tout le long de son cou, et lui permet de flotter sur les courants d'air. L'intérieur de sa bouche et de son capuchon sont bleu-vert.
+            L'Hirabami a des pattes arrières palmées, des sortes de nageoires aux bras, et deux doigts à chaque main, dont un avec une énorme griffe en forme de faucille.
+            Sa queue est très développée et armée de plusieurs griffes à son extrémité, évoquant légèrement celle de l'Almudron avec ses "pléopodes" comme chez les crevettes. Cette queue griffue sert tant à s'accrocher aux falaises et plafonds de grotte qu'à attaquer.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            C'est à ce jour le seul Léviathan connu qui peut se déplacer dans les airs, grâce à son capuchon au cou qui lui permet de flotter sur les courants.
+            Ce mode de déplacement rappelle des monstres comme l'Amatsu, l'Ibushi du vent ou encore le Shantien qui ont un corps similaire à celui des Léviathans et se déplacent par lévitation; la principale différence est que ces derniers sont des Dragons anciens qui se meuvent grâce à leurs redoutables capacités.
+            L'Hirabami utilise les griffes de sa puissante queue pour s'agripper aux parois rocheuses et tendre des embuscades. Il semble agir comme les monstres faibles tels que les Izuchis et Velocipreys, en se déplaçant par petits groupes pour surprendre ses proies.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Uniquement aperçu dans les falaises de glace pour le moment.
+
+            <br><br>
+            <img class="monstre-image" src="hirabami.webp">
+            <br><br>
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/7ruVxREc3b8?si=S3iGVMj4duw6bmZP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button25" value="►" onclick="OnOff(25);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay26">
+        <img class="monstre" src="Ajarakan_Icon.webp"><div class='paragraphe'><h3>Ajarakan</h3></div>
+        <div class='texte' id="texte26">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            L'Ajarakan est une créature simiesque possédant une morphologie similaire à celle du Rajang, mais dont l'aspect général rappelle un mélange entre un babouin et un lion.
+            Son corps est recouvert, de la tête à la queue, de solides écailles acérées. Celles du dos sont particulièrement épaisses et pointues et leur forme évoque des flammes. La couleur de sa carapace tend vers le rouge et or, avec des nuances de bleu-vert notamment pour la tête au niveau du nez, du front et des paupières. Il a une longue queue tout aussi armurée et de puissants membres.
+            Chose rare parmi les Bêtes à crocs de type "primate", il ne possède pas de griffes aux mains mais plutôt des ongles courts et plats.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Très agressif, il a été vu avec un autre individu à attaquer les intrus sur son territoire.
+            Il peut frotter ses excroissances du dos sur du métal en fusion afin de les réchauffer, sa carapace devenant rouge flamboyant. La friction du métal augmente la température qu'il émet au point de faire fondre les flèches et les balles, et cuit tout individu proche de lui, mais fragilise également sa carapace qui se ramollit.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Principalement aperçu dans le bassin pétrolier, qui semble être son habitat de prédilection, il arrive que certains spécimens particulièrement puissants soient observés dans les Ruines de Wyveria.
+
+            <br><br>
+            <img class="monstre-image" src="ajarakan.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Xq27YoXVs1k?si=tuOfUvKJ0m2RBBgO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button26" value="►" onclick="OnOff(26);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay27">
+        <img class="monstre" src="Nu_Udra_Icon.webp"><div class='paragraphe'><h3>Nu Udra</h3></div>
+        <div class='texte' id="texte27">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Créature semblable à une pieuvre, elle possède 6 tentacules principaux et 2 plus petits sous ses yeux. Son corps est sombre et strié de lignes vertes au niveau du tronc, et il est recouvert d'un limon noir et visqueux semblable à du pétrole.
+            Sa tête est ornée de 2 cornes de couleur claire et le reste du corps est parsemé de piquants le long des tentacules. L'extrémité de ces derniers possèdent des piques plus long que sur le reste du corps ainsi qu'un organe sensoriel blanc et arrondi.
+            Lorsqu'énervé, le limon sur son corps prend feu, il ouvre ses yeux blancs et des lignes bleues claires s'illuminent des alentours de ses yeux jusqu'à ses cornes.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Agressif et territorial, ce puissant monstre est capable de tenir tête à d'autres créatures comme l'Ajarakan. Il a déjà terrorisé par le passé le village d'Azuz, au point qu'il a hérité du surnom de "Flamme noire".
+            Comme les véritables pieuvres, il a un corps très flexible grâce auquel il peut se faufiler dans des endroits exigus pour échapper à ses assaillants. Il semble apprécier dormir en se cachant dans des tuyaux des forges du Bassin pétrolier, où il est à l'abri des coups des chasseurs.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Le Nu Udra a été uniquement aperçu dans le bassin pétrolier.
+
+            <br><br>
+            <img class="monstre-image" src="nu-udra.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/_yCHOeapBaY?si=IK0lzZgQjXbqYMLz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button27" value="►" onclick="OnOff(27);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay28">
+        <img class="monstre" src="Jin_Dahaad_Icon.webp"><div class='paragraphe'><h3>Jin Dahaad</h3></div>
+        <div class='texte' id="texte28">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Le Jin Dahaad est un très grand Léviathan avec des caractéristiques rappelant une Wyverne reptile, comme un corps allongé et de courtes pattes.
+            C'est une créature imposante aux écailles argentées, et dont l'ensemble du corps possède de multiples crêtes cuivrées recouvertes de givre. Celles-ci sont particulièrement grandes au niveau du dos, de la queue et de la tête ou elles forment une sorte de casque couronné. Dans l'ensemble, ces excroissances ont une apparence rappelant des os, vertèbres et côtes, et forment une sorte d'exosquelette.
+            Les griffes du Jin Dahaad sont comme des piolets pour lui permettre de s'accrocher à la glace, et sa mâchoire inférieure peut se séparer en deux comme chez la Narwa du tonnerre.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Très agressif, le Jin Dahaad est le prédateur apex des Falaises de glace. Il possède la redoutable capacité d'abaisser brutalement la température de son environnement grâce aux crêtes sur son corps.
+            Il peut geler le sol ou les parois sous ses pattes afin que ses griffes adhèrent à la surface, et ainsi grimper aux murs aussi aisément qu'un lézard malgré sa taille démesurée.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Le Jin Dahaad habite les Falaises de glace où il y règne en maître.
+
+            <br><br>
+            <img class="monstre-image" src="jin-Dahaad.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1KbzQB_niPA?si=XF9p8GqRE8SDl3-e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button28" value="►" onclick="OnOff(28);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay29">
+        <img class="monstre" src="Odogaron_Icon.webp"><div class='paragraphe'><h3>Odogaron désastre</h3></div>
+        <div class='texte' id="texte29">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            L'Odogaron désastre se distingue de son espèce principale par sa peau noire comme l'ébène. Seule sa tête arbore le rouge sang si caractéristique de l'Odogaron classique. De plus si les yeux de l'espèce principale sont d'un bleu glacial, ceux de cette sous-espèce brillent désormais d'un éclat rouge sinistre. Sa bouche exhale une vapeur rouge sombre caractéristique de l'élément  Dragon.
+            Par son utilisation de l'élément dragon, les couleurs qu'il arbore et sa faim dévorante, l'Odogaron désastre est un super-prédateur semblable au Deviljho affamé.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            L'Odogaron désastre est encore plus agressif que l'Odogaron. Il est dit qu'il emporte ses proies dans sa gueule et devient fou au moment de manger. Il est également à noter que ce dernier peut avoir des tendances cannibales, pouvant s'attaquer à des Odogaron de son espèce.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            L'Odogaron n'a été observé que dans les Ruines de Wyveria.
+
+            <br><br>
+            <img class="monstre-image" src="odogaron-desastre.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BIrJ6Zp9ErA?si=xMbC06LY_SfvCAs5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button29" value="►" onclick="OnOff(29);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay30">
+        <img class="monstre" src="Xu_Wu_Icon.webp"><div class='paragraphe'><h3>Xu Wu</h3></div>
+        <div class='texte' id="texte30">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Le Xu Wu est un Céphalopode à l'apparence étrange, avec une peau sombre semblant parcourue de racines.
+            Sa tête sphérique ressemble à un rocher ou de l'écorce noueuse, agrémentée ça et là de parties dorées. Au sommet de sa tête se trouve une "couronne" de dents faisant penser à une bouche, et on peut apercevoir une sorte de rictus entre sa tête et ses tentacules qui s'illumine de bleu lorsque le monstre s'énerve. Il n'a pas d’œil et se repère grâce à ses autres sens.
+            Le Xu Wu possède 8 tentacules : 6 principaux qu'il utilise pour la locomotion et le combat et 2 autres plus courts juste en-dessous de son "rictus".
+            Bien qu'il semble posséder 2 bouches -une au sommet de sa tête et une formant un sourire dérangeant- sa véritable gueule se trouve sous son corps et ressemble à un trou entouré de nombreuses dents pointues. Son ventre est d'un bleu éclatant et chaque envers de tentacule est parcouru de crocs. De manière générale, le dessous de son corps rappelle les étoiles de mer, celles-ci se nourrissant grâce à un orifice buccal sur leur ventre.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Le Xu Wu est une créature assez particulière car elle se veut le principal prédateur des Artificiels, qui sont des monstres "fabriqués", ce qui montre une grande adaptation. Sa férocité est telle qu'il est devenu plus dangereux que ses proies, même si celles-ci lui donnent du fil à retordre dans ses chasses.
+            Utilisant son mucus durci en pointes comme d'une arme, il frappe depuis l'ombre et utilise l'énorme bouche sous son ventre pour avaler ses victimes. Ses capacités lui ont valu le surnom de "L'Assassin transperçant".
+            Bien qu'il n'ai pas d’œil visible, il reste un redoutable adversaire, usant de ses autres sens pour se repérer dans son environnement. Comme pour le Nu Udra, il a un corps souple qui lui permet de se faufiler dans des crevasses pour surprendre ses proies.
+            Les bébés de cette créature se nomment "Xu Yo", sont ronds avec de petits tentacules et un corps jaunâtre.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Le Xu Wu ne se trouve que dans les Ruines de Wyveria où il chasse les monstres Artificiels dont il se nourrit.
+
+            <br><br>
+            <img class="monstre-image" src="xu-wu.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nh6WJrpDXxY?si=dwKGzbMaDi2pYott" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button30" value="►" onclick="OnOff(30);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay31">
+        <img class="monstre" src="Yian_kut-ku_Icon.webp"><div class='paragraphe'><h3>Yian Kut-Ku</h3></div>
+        <div class='texte' id="texte31">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Le Yian Kut-Ku est une petite Wyverne volante au corps couvert d'écailles roses orangées et d'un dégradé beige. Les membranes de ses ailes sont d'un bleu profond.
+            Il est caractérisé par ses grandes oreilles en éventail qui se déploient quand il est en alerte. Ces oreilles lui donnent une audition très développée en plus d'un certain aspect comique. Il a un grand bec jaune avec des bandes roses sur la partie supérieure et les côtés, et de petits yeux ronds aux paupières bleues. La mâchoire inférieure de son bec est plus grande que la mâchoire supérieure et lui permet d'attraper des proies et de frapper ses opposants.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Le Yian Kut-Ku est une wyverne plutôt capricieuse, espiègle, et curieuse. Il a tendance à vouloir paraître plus grand qu'il ne l'est en déployant ses ailes et ses oreilles ainsi qu'en criant. C'est une wyverne généralement insectivore, s'attaquant aux Konchus et d'autres Neopterons qui constituent la majeure partie de son régime alimentaire.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Le Yian Kut-Ku habite principalement les zones tempérées et forestières comme la vieille jungle, les collines verdoyantes ou la jungle. On peut également le trouver au vieux volcan.
+            <br><br>
+            <img class="monstre-image" src="yian-kut-ku.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VVgrVeLWqb8?si=EGTI46bKRkz326e0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button31" value="►" onclick="OnOff(31);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay32">
+        <img class="monstre" src="Gypceros_Icon.webp"><div class='paragraphe'><h3>Gypceros</h3></div>
+        <div class='texte' id="texte32">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Le Gypceros est l'une des plus grandes et des plus lourdes wyvernes rapaces connues.
+            Il possède une épaisse peau caoutchouteuse bleue-grise résistante aux chocs et à l'électricité. Les côtés de son cou ont une bande d'écailles roses et ses ailes ont une membrane beige. Sa longue queue rose à la pointe en forme de bulbe est élastique et peut s'allonger lors de certaines attaques.
+            Sa mâchoire supérieure a une sorte de corne sur l'extrémité, recourbée de façon à pouvoir heurter sa crête contenant un cristal au sommet de sa tête. Il a des dents grossières, avec des incisives supérieures prononcées.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Les Gypceros sont des wyvernes timides, mais plutôt intelligentes et rusées, comme en témoigne leur capacité à feindre la mort afin de piéger un ennemi dans une attaque surprise. Ils sont attirés par les objets brillants et peuvent voler des items lors de leurs attaques. Leur peau caoutchouteuse les protège des dégâts de  Foudre et des pièges électrochoc.
+            Il est possible que les pieds du Gypceros aient des ventouses car ils sont capables de courir sur les murs.
+            Ils sont une proie pour la Nerscylla, qui s'habille de leur peau.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Les Gypceros se trouvent généralement dans des zones humides comme les marécages (Marais, Vieux marais) et les grottes (Vallon immergé), mais peuvent parfois être vus dans les jungles et les prairies ouvertes (Jungle, Steppe ancestrale, Forêt et collines...).
+            <br><br>
+            <img class="monstre-image" src="gypceros.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tDBppQ57CzI?si=DMqA5Kwj2YTnGi8R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button32" value="►" onclick="OnOff(32);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay33">
+        <img class="monstre" src="Rathian_Icon.webp"><div class='paragraphe'><h3>Rathian</h3></div>
+        <div class='texte' id="texte33">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Les Rathians sont l'archétype des wyvernes volantes à l'instar du Rathalos avec une paire d'ailes et deux pattes. Sa carapace est de couleur verte et s'étant de la tête à la queue.
+            Sa tête est munie d'une excroissance épineuse au niveau du menton et de deux autres derrières ses oreilles pointues. Du pelage brun est visible sur son dos à la jointure des deux ailes. Quant à sa queue, de nouvelles excroissances sont présentes de part et d'autre de celle-ci avec des aiguilles au bout de sa queue. Ses ailes possèdent des motifs abstraits avec une palmure de couleur beige. Des pointes se trouvent sur la dernière phalange.
+            Au niveau ventral, la Rathian arbore une couleur grise claire s'étendant du bas de la tête au dessous de la queue. Ses pattes sont robustes et se terminent par 4 serres acérés. Sa carapace verte vient les recouvrir jusqu'aux genoux où elle se termine par des écailles pointues.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Agressive et territoriale, elle patrouillera sur son territoire au sol tandis que le Rathalos patrouillera dans le ciel. Les Rathians s'organisent en harem autour d'un mâle, un Rathalos. Une fois les œufs éclos, elles iront chercher à manger pour leurs petits comme des velocipreys.
+            Les Rathians sont très attachées à leurs œufs, si un intru vint à les voler, elle les pourchassera.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            La Rathian a été aperçue partout autour du monde mais seulement dans des environnements au climat désertique comme le vieux désert, les dunes ou les plaines venteuses, tempéré comme la jungle, la steppe ancestrale, l'île déserte ou les collines verdoyantes et marécageux comme le vieux marais.
+            éElles semblent éviter les zones trop chaudes comme les volcans ou trop froides comme les montagnes.
+            <br><br>
+            <img class="monstre-image" src="rathian.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/qz7x-Ftg6oo?si=UTiLduqRAN2e5L4-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button33" value="►" onclick="OnOff(33);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay34">
+        <img class="monstre" src="Anjanath_Icon.webp"><div class='paragraphe'><h3>Anjanath tonnerre</h3></div>
+        <div class='texte' id="texte34">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            L'Anjanath tonnerre possède à peu de choses près le même corps que son espèce principale, l'Anjanath, soit la morphologie d'un tyrannosaurus. Cependant, contrairement à son homologue, ce dernier possède une fourrure non pas grise mais blanche tigrée noire, ses ailerons sur le dos sont bleus foncés/violacés et sa tête est orange tigrée noire. Sa peau, elle, est bleu claire. Son organne olfactif, son nez, est aussi bleu foncé/violacé. Lorsqu'il passe successivement de son état normal à ses deux états "chargés", ses proto-plumes s'hérrissent et son organe olfactif et ses ailerons, lors du dernier états, deviennent bleu/blanc vif, lumineux, à cause de l'électricité qui parcoure son corps. Ses ailerons révèlent ainsi des rayures invisibles en temps normal, comme des vaisseux, et ses proto-plumes révèlent leur utilitées conductrices pour maitriser l'électricité.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            L'Anjanath tonnerre est un monstre qui, comme les autres wyverne de terre normal, est extrêmement aggressif. il peut apparaître sur toutes les cartes. Comme l'Anjanath basique, il utilise son nez, organe olfactif, qu'il peut déployer, pour pister ses proie, et de fait, a aussi un très bon odorat. C'est aussi un monstre de rang grand qui est au sommet de la chaîne alimentaire, avec les quelques autres prédateurs du même gabarit ue lui sur l'île du Givre éternel. En outre, son comportement n'est guère différent de l'Anjanath classique, et comme lui, déploit ses ailerons et son organe olfactif, pour impressionner ses adversaires et paraître plus grand, surtout encore plus lorsqu'il est dans dernier état de charge, avec les couleurs sur ces parties de son corps apparaisant à cause de l'électricité.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            L'Anjanath tonnerre n'est pas un monstre nomade: Cependant, il peut être rencontré dans la Forêt ancienne, le Désert des termites, le Plateau de corail, le Val putride et la Terre des anciens. Mais son habitat principal et d'origine est le Givre éternel, lieu de sa découverte. Si on le retrouve sur tout le Nouveau monde, c'est parce qu'il habite aussi le Fief glorieux, où il y a une zone polaire, et que, comme les autres nouvelles espèces, sous-espèces et variantes, aprés la fin de l'histoire de base de MHW, à cause de la mort du Xeno'jiiva et/ou du Shara Ishvalda, s'est répandu sur tout le reste de l'île. Ainsi, l'Anjanath tonnerre, malgrés sa physiologie adaptée au régions polaires, est un monstre qui peut cependant s'adapter assez rapidement à de nouveaux biomes, même de températures complétement à l'opposées de son habitat d'origine, ce qui est trés surprenant, vu qu'en temps normal, les espèces adaptées aux froid, même non extrême, ont la plupart du temps du mal à s'adaptées au moindre pic de température. Cela est d'ailleur pareil pour le Banbaro.
+
+            <br><br>
+            <img class="monstre-image" src="anjanath.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/i_l7D65BYCg?si=cH-2tn-D9UFEt3L0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button34" value="►" onclick="OnOff(34);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay35">
+        <img class="monstre" src="Rathalos_Icon.webp"><div class='paragraphe'><h3>Rathalos</h3></div>
+        <div class='texte' id="texte35">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            De taille moyenne, il est reconnaissable par sa morphologie (2 pattes et 2 ailes), sa couleur rouge cramoisie, ses ailes et queue bardées de piques et son patagium comportant des motifs de flammes.
+            Il est recouvert de plaques et d'écailles rouges et noires avec le dessous du corps et la membrane des ailes beiges. De chaque côté de la mâchoire, sous les oreilles, se trouvent des excroissances de plaques faisant penser à des mandibules d'insecte. Les pattes ont des serres acérées pouvant injecter du poison, et lui permettent de tuer et de saisir des proies, et la queue se termine en une massue à pointes.
+            Au delà de son apparence de Wyverne, le Rathalos évoque aussi l'aigle, autant par son museau crochu que par son statut de roi des cieux.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Il existe deux sous-espèce de Rathalos, le Rathalos azur habitant aux mêmes endroits que son cousin rouge, et une sous-espèce plus solitaire, le Rathalos d'argent, vivant dans des zones plus recluses : l'Ancienne Tour ou les Marais. Le Rathalos est agressif et n'hésitera pas à tuer les intrus pouvant représenter un danger pour son territoire. Lors de la chasse, il vole au-dessus de sa proie avant de plonger sur elle pour l'abattre. Une fois morte, il la transporte en lieu sûr pour la dévorer, loin des autres monstres qui pourraient la lui voler. Tous les Rathalos sont des mâles, les Rathian étant leurs homologues féminins, et il n'est pas rare de les croiser ensemble. En cas de vol de leurs oeufs, ils pourchasseront les coupables.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            En dehors des zones très froides, c'est un monstre que l'on rencontre dans de nombreux biomes. Du fait de sa suprématie dans les airs, il vit souvent au sommet des terrains, ce qui lui permet de surveiller rapidement toute l'activité de son territoire. On trouve souvent le Rathalos dans les Collines verdoyantes, mais aussi dans les zones volcaniques et les marais. Dans Monster Hunter Tri, il apparaît dans le Volcan et l'Île déserte, et aussi dans la Forêt Moga en Chasse libre. On le trouve également au sommet de l'arbre de la Forêt ancienne dans Monster Hunter: World.
+
+            <br><br>
+            <img class="monstre-image" src="rathalos.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/l22XRK-0ZI8?si=Y3S8qC7KK-wfWZ3-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button35" value="►" onclick="OnOff(35);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay36">
+        <img class="monstre" src="Gravios_Icon.webp"><div class='paragraphe'><h3>Gravios</h3></div>
+        <div class='texte' id="texte36">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Le Gravios est une très grosse Wyverne volante au corps protégé par une lourde carapace grise semblable à de la roche.
+            Son apparence est assez différente de sa forme juvénile, le Basarios. Il possède une corne sur le museau, son dos est recouvert de piques épais en forme de tubes et sa puissante queue est comme une masse. Il a les mêmes protubérances sur ses cuisses que les Basarios.
+            Il est recouvert d'écailles et de plaques lui assurant une protection contre son environnement et ses ennemis; son armure est cependant plus faible au niveau du ventre.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Le Gravios est relativement docile tant que l'on ne le provoque pas, mais il reste très territorial.
+            Il se nourrit majoritairement de roches et de minerais qu'il trouve dans les volcans où il vit. Ses écailles forment une véritable armure le protégeant de la chaleur extrême de son environnement, au point qu'il peut marcher dans la lave. Avec sa taille imposante, c'est une créature puissante et une des plus grosses et des plus lourdes Wyvernes volantes connues.
+            L'Akantor est un des seuls monstres connus à s'attaquer au Gravios.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Il vit majoritairement dans les environnement volcaniques comme dans le Volcan (2G)/Volcan (3G) ou le Vallon volcanique, mais peut aussi être trouvé, moins fréquemment, dans des biomes comme le Marais et la Forêt primitive. Protégé par sa carapace, il peut se déplacer dans la lave sans problème.
+
+            <br><br>
+            <img class="monstre-image" src="gravios.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/K10z8t1xa9g?si=dkP-PNvO46qvnj5j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button36" value="►" onclick="OnOff(36);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay37">
+        <img class="monstre" src="Blangonga_Icon.webp"><div class='paragraphe'><h3>Blangonga</h3></div>
+        <div class='texte' id="texte37">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Pourvu d'une large bosse bleuâtre sur le crâne et d'une longue moustache, le Blangonga est deux fois plus grand que le Blango et beaucoup plus puissant et agressif. Sa fourrure blanche très épaisse lui sert de camouflage dans la neige et le protège du froid. Ses griffes lui permettent de creuser le sol et d'infliger des blessures à ses opposants. Sa musculature est telle qu'elle rivalise avec celle du redoutable Rajang; on a d'ailleurs longtemps pris, à tort, le Blangonga pour une sous-espèce de Rajang.
+            Ses longues canines prouvent son statut de leader; sans elles, il n'est plus rien aux yeux des Blangos. Les colorations de son faciès font penser à celle d'un mandrill (wikipedia); elles servent à attirer l'attention des femelles et à intimider les autres mâles. Il règne sans partage sur le territoire de son clan, et veille à ce que quiconque ose s'approcher de ses terres en paye les conséquences.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Le Blangonga est très agressif, attaquant impitoyablement les chasseurs. En revanche, il tend à fuir les créatures plus grosses que lui.
+            La vie des Blangos et des Blangongas est dure et cruelle. Les Blangos devenus Blangongas sont chassés par le Blangonga dominant, afin d'éviter qu'ils ne remettent en cause le statut du meneur. Les jeunes mâles quittent alors le clan pour en chercher un autre, subvenant seuls à leurs besoins.
+            Une fois un clan trouvé, le Blangonga dominant et le rival s'affrontent lors d'un duel à mort. Si le rival gagne, il s'empare de ses terres et de son harem, et devient le nouveau mâle dominant. Si les crocs du Blangonga viennent à casser, il n'est plus respecté de sa meute et doit fuir sous peine de se voir attaqué par les Blangos.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Le Blangonga vit exclusivement dans les régions froides, comme la Montagne enneigée.
+
+            <br><br>
+            <img class="monstre-image" src="blangonga.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rXYyuFQCaKo?si=5yHSBXjphz-4KPqk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button37" value="►" onclick="OnOff(37);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay38">
+        <img class="monstre" src="gore_Magala_Icon.webp"><div class='paragraphe'><h3>Gore Magala</h3></div>
+        <div class='texte' id="texte38">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Le Gore Magala est une créature partageant des traits et des similitudes avec les Dragons Anciens, possédant six membres, en comptant les ailes griffues sur son dos. Son apparence générale et sa position ressemblent à celle d'une wyverne quadrupède comme le Nargacuga. Son corps est recouvert d'un exosquelette sombre, avec des caractéristiques remarquables telles que ses cornes cachées qui sont repliées sur les côtés de son visage, l'absence d'yeux visibles et ses crocs, qui sont en fait des parties de son exosquelette.
+            Les autres parties notables sont ses ailes, qui sont recouvertes de fourrure noire semblable à une cape en lambeaux. Les griffes sur ses ailes semblent avoir des pouces opposables et sont utilisées pour saisir, aider à la course et maintenir la stabilité du monstre.
+            Quand il est en mode Virus, ses cornes et ses crocs se déplient et des parties de son corps prennent une teinte violette, ce qui lui donne un air encore plus maléfique.
+            Concernant la naissance des Gore Magala, lorsqu'un Shagaru Magala infecte un monstre, celui-ci est infecté par le virus et finira par se transformer en Gore Magala à la manière de La Chose du roman éponyme de John W. Campbell.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Le Gore Magala est un prédateur agressif mais aveugle, qui se repère dans son environnement grâce au "pollen" que son corps produit. Il répand des poils et des écailles qui vont s'attacher à ses alentours. Lorsque ce "pollen" s'attache à un être vivant, il permet au Gore Magala de ressentir la chaleur émise par cet individu et il peut alors le prendre en chasse.
+            Ces écailles ont cependant un effet secondaire dévastateur, celui de contaminer les êtres vivants avec un Virus Virus. Les monstres contaminés seront comme constamment enragés et auront une coloration plus sombre, en plus de pouvoir eux même produire le virus. Certains monstres arrivent à combattre la maladie et en ressortent plus puissants.
+            Lorsqu'un chasseur est infecté, si il peut infliger assez de dégâts lors de la contamination, il deviendra immunisé au virus pendant un certain temps et aura un bonus d'affinité. Dans le cas contraire, il perdra de la régénération naturelle, de l'affinité et de la défense.
+            Cette particularité du Gore Magala fait qu'il a un impact très considérable sur son environnement.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Il est connu pour habiter les zones chaudes et tempérées comme la steppe ancestrale, le temple oublié, le bois éternel ou la citadelle. Cependant, on l'a déjà vu prendre en chasse des bateaux dans le grand océan.
+
+            <br><br>
+            <img class="monstre-image" src="gore-magala.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0BvrgzJdNZ8?si=-fQxErykqf52FXow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button38" value="►" onclick="OnOff(38);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay39">
+        <img class="monstre" src="arkveld_Icon.webp"><div class='paragraphe'><h3>Arkveld</h3></div>
+        <div class='texte' id="texte39">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            L'Arkveld possède la morphologie des "pseudo-wyvernes" comme le Tigrex : il a des bras ailés mais adopte une démarche principalement quadrupède. Rappelant légèrement le Mordomunth dans son apparence, il est recouvert d'une carapace gris clair et d'écailles effilées ressemblant à de la pierre, avec de la fourrure blanche au niveau des membres supérieurs, du cou et de la queue. La membrane de ses ailes est réduite mais n'empêche pas le vol.
+            Il a une tête recouverte de plaques formant comme un casque, une mâchoire courte mais armée de redoutables crocs pointus, et deux cornes pointant vers l'avant de la tête. Une sorte "d'aileron" se trouve également sur son dos et le sommet de son crâne.
+            Sa principale caractéristique se trouve au niveau de ses pattes avants. Tout comme chez le Berukyurosu, il a de longues excroissances sur ses bras, mais plutôt qu'être des doigts allongés, celles-ci sont des "chaînes" formées de plusieurs écailles, attachées aux poignets du monstre.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Il n'existe que très peu d'information sur ce monstre car son espèce est considérée comme éteinte par la Guilde.
+            Agressif et territorial, il est capable de voler de l'énergie à d'autres monstres comme le Rey Dau afin de la transformer en énergie draconique et acquérir plus de puissance.
+            D'après les dires d'un jeune garçon nommé Nata, il serait à l'origine du massacre du peuple des Veilleurs habitants les terres interdites.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            L'Arkveld a été aperçu dans tous les environnements des Terres Interdites, il s'agirait donc d'une espèce nomade.
+
+            <br><br>
+            <img class="monstre-image" src="arkveld.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xVVNsmDXKGI?si=asBmTCcppmvHu-n6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button39" value="►" onclick="OnOff(39);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay40">
+        <img class="monstre" src="mizutsune_Icon.webp"><div class='paragraphe'><h3>Mizutsune</h3></div>
+        <div class='texte' id="texte40">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Le Mizutsune est un Léviathan au long corps fin dont l'apparence évoque un renard.
+            Il a la particularité d'avoir de la fourrure violette sur sa poitrine, son ventre, ses pattes et sa queue. Ses écailles sont majoritairement roses et beiges, et rappellent celles d'un poisson. Sa tête a un long museau comme un canidé et est magnifiquement décorée par de nombreuses nageoires et barbillons ressemblant à ceux d'un poisson-chat.
+            Son échine et sa queue sont parées d'ailettes roses avec des marques jaunes et des ocelles, celles des mâles ayant une couleur plus rougeâtre à cause de leur comportement plus agressif.[1]. Ses pattes sont très différentes de ceux des autres Léviathans, ayant de longues griffes recourbées, et lui permettent de se déplacer aisément sur terre.
+            Tous les Mizutsunes rencontrés en jeu sont des mâles, et les femelles auraient des couleurs ternes, une fourrure plus sombre et des nageoires courtes.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Le corps du Mizutsune produit une substance évoquant le savon et formant une mousse au contact de l'eau. Cette mousse déstabilise ses adversaires en gênant leurs mouvements mais lui facilite les siens, la fourrure violette de son ventre lui permettant de glisser sur ses fluides. Ses griffes en forme de crochets lui assurent une prise sur la terre ferme afin de mieux contrôler ses déplacements.
+            Il n'est pas très agressif envers les chasseurs, et il lui arrive souvent de marcher sans vraiment sembler s'inquiéter de la présence d'un intrus sur son territoire jusqu’à ce qu'il le remarque. Cependant une fois provoqué, il ripostera en envoyant des bulles parfois difficiles à esquiver, emprisonnant les chasseurs et lui permettant alors d'effectuer des attaques plus puissantes. En combat, il a tendance à rester à distance des cibles et à glisser de façon élégante, utilisant à son avantage la mousse que son corps produit.
+            Les mâles ont de vives couleurs pastel les rendant agréables à l'oeil, mais ils deviennent destructeurs lors de la saison de reproduction, attaquant facilement tout individu qu'ils croisent, d'où les quêtes de chasse les concernant.
+            C'est une créature essentiellement piscivore, mais qui ne dédaigne pas des proies plus grosses comme le Kelbi. Bien qu'il ait une certaine puissance et place dans son écosystème, il doit quand même rivaliser avec d'autres grands prédateurs comme le Zinogre.
+
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            Le Mizutsune a été aperçu dans des environnements tempérés, forestiers et à proximité d'une source d'eau comme les Pics brumeux, la Forêt primitive ou le Temple oublié. La présence d'eau lui permet d'utiliser sa mousse comme arme contre ses adversaires.
+
+            <br><br>
+            <img class="monstre-image" src="mizutsune.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/a6jPn-3FEU0?si=hJV9mZOwWbM7M2Kb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button40" value="►" onclick="OnOff(40);">
+    </div>
+</div>
+
+<div class="monster-box">
+    <div class='overlay-monstre' id="overlay41">
+        <img class="monstre" src="zoh_shia_icon.webp"><div class='paragraphe'><h3>Zoh Shia</h3></div>
+        <div class='texte' id="texte41">
+            <div class='sous-titre'><h1><strong>Physiologie</strong></h1></div>
+            Le Zoh Shia est un Artificiel dont la morphologie rappelle celle du Gore Magala : il est quadrupède avec des ailes au bout desquelles se trouvent des "mains".
+            Son apparence générale est angélique : tout son corps est recouvert d'une armure de cristaux blancs-gris de wylait dont la forme recourbée évoque des plumes. Ces "plumes" de cristal vont jusqu'à recouvrir ses griffes et doigts d'ailes mais elles ont plus l'apparence de pointes le long de sa queue et sur les côtés de sa tête. Cette dernière a une sorte de "casque" ne laissant paraître aucun œil ou visage, et l'intérieur de sa gueule est d'un bleu profond.
+            Cet aspect séraphique n'est cependant qu'une illusion, car à mesure que les cristaux de sa carapace sont détruits, sa véritable identité se révèle. Sous son armure évoquant le pur et le divin, le Zoh Shia a en réalité un corps noir et monstrueux, avec des écailles sombres prenant l'aspect de pics difformes. Ses ailes n'ont pas de plumes ou de membrane et leurs mains ont des griffes acérées. Sa tête quant à elle présente une gueule aux dents grossières et de longues cornes tortueuses.
+            De manière surprenante, ces cornes restent totalement dissumulées par le "casque" de cristaux de wylait lorsque celui-ci est présent, alors qu'elles occupent beaucoup plus de place et devraient largement en dépasser.
+            Ce changement d'apparence n'est pas sans rappeler le thème de la chute et transformation d'un ange en un démon.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Comportement</strong></h1></div>
+            Le Zoh Shia a été créé il y a des siècles par la Civilisation antique en tant qu'arme secrète afin de se défendre contre une menace jusque là inconnue. Possédant une apparence et une force proche de celle d'un Dragon ancien, il s'est révélé trop puissant et incontrôlable et s'est retourné contre Wyveria. Il a alors provoqué la chute de la civilisation avant d'être scellé.
+            Durant son emprisonnement, il s'est nourri de la Torche Draconique, une puissante source d'énergie d'où vient le Lait de Wyverne, et qui aurait permit de manipuler les phénomènes naturels des Terres Interdites.
+            Recouvert de cristaux de wylait lui donnant l'aspect d'un être céleste, il est en réalité, sous cette armure, une créature sombre et grotesque. Cependant le plus effrayant vient de ce qu'il évoque : son apparence générale rappelle vaguement le Fatalis et il peut utiliser les capacités de certains Dragons anciens, dont les plus légendaires et redoutés (les boules de feu du Fatalis, les météores du Fatalis pourpre et les éclairs du Fatalis ancien). Ces caractéristiques laissent à penser qu'il serait le fruit d'une tentative de recréer un monstre similaire, ou du moins une arme à la force comparable capable de faire face aux Dragons anciens ou un ennemi inconnu tout aussi puissant.
+            <br><br>
+            <div class='sous-titre'><h1><strong>Habitat</strong></h1></div>
+            On le trouve dans les Ruines de Wyveria, scellé auprès de la Torche Draconique.
+
+            <br><br>
+            <img class="monstre-image" src="zoh-shia.webp">
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uIJqDjlI27A?si=wKWCtNH0qI1DQYjt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <br>
+        <input type="button" class='button' id="button41" value="►" onclick="OnOff(41);">
+    </div>
+</div>
+
+
+
+    <br><br><br><br><br><br><br>
+
+
+
+
+
+
+</div>
+
+                               `;
+            }
+        }
+    </script>
+</body>
+</html>
